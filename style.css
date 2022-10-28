@@ -19,3 +19,10 @@ body {
     color: rgb(13, 99, 77);
     font-weight: bold;
   }
+  aside {
+    width: 40%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    background-color: rgb(238, 237, 237);
+  }

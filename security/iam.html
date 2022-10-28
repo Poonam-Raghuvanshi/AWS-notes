@@ -8,12 +8,41 @@
 </head>
 
 <body>
-    <p class="main-heading">IDENTITY AND ACCESS MANAGEMENT </p>
-    <p> It is a Global service. </p>
+    <p class="main-heading">IDENTITY AND ACCESS MANAGEMENT (GLOBAL SERVICE) </p>
     <p> Root account created by default, shouldn’t be used or shared </p>
     <p> Users are people within your organization, and can be grouped</p>
     <p class="point"> Groups only contain users, not other groups. Users don’t have to belong to a group, and user can
         belong to multiple groups</p>
+    <p class="heading">IAM: Permissions
+    </p>
+    <p>
+    <ul>
+        <li> Users or Groups can be assigned JSON documents called policies - These policies define the permissions of
+            the users </li>
+        <li> In AWS you apply the <span class="point">least privilege principle:</span> don’t give more permissions than
+            a user needs </li>
+    </ul>
+    </p>
+    <section>
+        <img src="../images/policy.PNG" />
+        <aside>Consists of
+            <ul>
+                <li> Version: policy language version, always include “2012-10-17”</li>
+                <li>Id: an identifier for the policy (optional)</li>
+                <li> Statement: one or more individual statements (required)</li>
+            </ul>
+            Statements consists of
+            <ul>
+                <li>Sid: an identifier for the statement (optional)</li>
+                <li> Effect: whether the statement allows or denies access (Allow, Deny) </li>
+                <li> Principal: account/user/role to which this policy applied to</li>
+                <li> Action: list of actions this policy allows or denies</li>
+                <li> Resource: list of resources to which the actions applied to</li>
+                <li> Condition: conditions for when this policy is in effect (optional)</li>
+                
+            </ul>
+        </aside>
+    </section>
 
 </body>
 
