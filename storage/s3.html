@@ -3,24 +3,23 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Kinesis </title>
+    <title> S3 </title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-    <p class="main-heading">Amazon Kinesis</p>
+    <p class="main-heading">Amazon S3</p>
+    <p class="heading"></p>
     <p>
-        It makes it easy to <b> collect, process, and analyze real-time, streaming data </b> so you can get timely
-        insights and react quickly to new information. Amazon Kinesis offers key capabilities to cost-effectively
-        process streaming data at any scale, along with the flexibility to choose the tools that best suit the
-        requirements of your application.
+        You can use Amazon S3 to host a static website. On a static website, individual web pages include static
+        content. They might also contain client-side scripts. To host a static website on Amazon S3, you configure an
+        Amazon S3 bucket for website hosting and then upload your website content to the bucket. <br> When you configure
+        a bucket as a static website, you must enable website hosting, set permissions, and create and add an index
+        document. Depending on your website requirements, you can also configure redirects, web traffic logging, and a
+        custom error document.
 
-        With Amazon Kinesis, you can ingest real-time data such as video, audio, application logs, website clickstreams,
-        and IoT telemetry data for machine learning, analytics, and other applications. Amazon Kinesis enables you to
-        process and analyze data as it arrives and respond instantly instead of having to wait until all your data is
-        collected before the processing can begin.
-
-        Kinesis will be great for event streaming from the IoT devices.
+        <b> Distributing the static content through S3 allows us to offload most of the network usage to S3 and free up
+            our applications running on ECS.</b>
     </p>
 </body>
 
