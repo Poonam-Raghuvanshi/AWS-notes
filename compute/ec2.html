@@ -1,1 +1,107 @@
-<p> hello I am EC2 </p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Infrastructure </title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <p class="main-heading">ELASTIC COMPUTE CLOUD</p>
+    <section>
+        <p class="heading">Amazon Machine Image (AMI) </p>
+        <p>
+            Template that contains a software configuration (for example, an operating system, an application server,
+            and applications). From an AMI, you launch an instance, which is a copy of the AMI running as a virtual
+            server in the cloud. You can launch multiple instances of an AMI, as shown in thefollowing figure.
+
+        </p>
+    </section>
+
+    <section>
+        <p class="heading">Instances </p>
+        <p>
+            An instance is a virtual server in the cloud. Its configuration at launch is a copy of the AMI that you
+            specified when you launched the instance.
+
+            You can launch different types of instances from a single AMI. An instance type essentially determines the
+            hardware of the host computer used for your instance. Each instance type offers different compute and memory
+            capabilities. Select an instance type based on the amount of memory and computing power that you need for
+            the application or software that you plan to run on the instance. For more information, see Amazon EC2
+            Instance Types.
+
+            After you launch an instance, it looks like a traditional host, and you can interact with it as you would
+            any computer. You have complete control of your instances; you can use sudo to run commands that require
+            root privileges.
+
+        </p>
+        <p class="point">General Purpose</p>
+        <p>
+        <ul>
+            <li>Balance of <b>compute, memory and networking resources </b> and can be used for a variety of diverse
+                workloads.
+            </li>
+            <li>Ideal for applications that use these resources in equal proportions such as web servers and code
+                repositories.</li>
+        </ul>
+        </p>
+
+        <p class="point">Compute Optimized</p>
+        <p>
+        <ul>
+            <li>Ideal for compute bound and intensive applications that benefit from high performance processors. </li>
+            <li>Suited for batch processing workloads, media transcoding, high performance web servers, high performance
+                computing (HPC), scientific modeling, dedicated gaming servers and ad server engines, machine learning
+                inference.
+            </li>
+        </ul>
+        </p>
+        <p class="point"> Memory optimized</p>
+        <p>
+        <ul>
+            <li> Designed to deliver fast performance for workloads that process large data sets in memory. </li>
+            <li>Workloads (SAP, SQL, and NoSQL databases); distributed web scale in-memory caches (Memcached and
+                Redis); in-memory databases and real-time big data analytics (Hadoop and Spark clusters)</li>
+        </ul>
+        </p>
+
+    </section>
+    <p class="heading">Placement Group </p>
+    <p>
+        When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of
+        your instances are spread out across underlying hardware to minimize correlated failures. You can use placement
+        groups to influence the placement of a group of interdependent instances to meet the needs of your workload.
+        Depending on the type of workload, you can create a placement group using one of the following placement
+        strategies:
+
+    <p class="point"> Cluster placement group </p>
+    <p>packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the
+        low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of HPC
+        applications</p>
+
+    <p class="point"> Partition placement group</p>
+    <p>
+        Spreads your instances across logical partitions such that groups of instances in one partition do not share the
+        underlying hardware with groups of instances in different partitions. This strategy is typically used by large
+        distributed and replicated workloads, such as Hadoop, Cassandra, and Kafka. <br/> A partition placement group can have a maximum of seven partitions per Availability Zone.
+    </p>
+
+    <p class="point"> Spread placement group.</p>
+
+    A Spread placement group is a group of instances that are each placed on distinct racks, with each rack having
+    its own network and power source. <br />
+
+    Spread placement groups are recommended for applications that have a small number of critical instances that
+    should be kept separate from each other. Launching instances in a spread placement group reduces the risk of
+    simultaneous failures that might occur when instances share the same racks.
+
+    A spread placement group can span multiple Availability Zones in the same Region. You can have a maximum of
+    seven running instances per Availability Zone per group. 
+    </p>
+    <p><b> Rack spread placement group </b>can span multiple Availability Zones in the same Region. You can have a maximum of seven running instances per Availability Zone per group.</p>
+<p><b>Host spread level placement groups </b> are only available with AWS Outposts. For host spread level placement groups, there are no restrictions for running instances per Outposts.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Important </title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <p>
+        AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services
+        developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx,
+        Passenger, and IIS.
+
+        You can simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity
+        provisioning, load balancing, auto-scaling to application health monitoring. At the same time, you retain full
+        control over the AWS resources powering your application and can access the underlying resources at any time.
+
+        When you create an AWS Elastic Beanstalk environment, you can specify an Amazon Machine Image (AMI) to use
+        instead of the standard Elastic Beanstalk AMI included in your platform version. A custom AMI can improve
+        provisioning times when instances are launched in your environment if you need to install a lot of software that
+        isn't included in the standard AMIs.
+
+        Create a Golden AMI with the static installation components already setup - A Golden AMI is an AMI that you
+        standardize through configuration, consistent security patching, and hardening. It also contains agents you
+        approve for logging, security, performance monitoring, etc. For the given use-case, you can have the static
+        installation components already setup via the golden AMI.
+
+        Use EC2 user data to customize the dynamic installation parts at boot time - EC2 instance user data is the data
+        that you specified in the form of a configuration script while launching your instance. You can use EC2 user
+        data to customize the dynamic installation parts at boot time, rather than installing the application itself at
+        boot time.
+    </p>
+    <p>
+        Blue/green deployment is a technique for releasing applications by shifting traffic between two identical
+        environments running different versions of the application: "Blue" is the currently running version and "green"
+        the new version. This type of deployment allows you to test features in the green environment without impacting
+        the currently running version of your application. When you’re satisfied that the green version is working
+        properly, you can gradually reroute the traffic from the old blue environment to the new green environment.
+        Blue/green deployments can mitigate common risks associated with deploying software, such as downtime and
+        rollback capability.
+
+        Use AWS Global Accelerator to distribute a portion of traffic to a particular deployment - AWS Global
+        Accelerator is a network layer service that directs traffic to optimal endpoints over the AWS global network,
+        this improves the availability and performance of your internet applications. It provides two static anycast IP
+        addresses that act as a fixed entry point to your application endpoints in a single or multiple AWS Regions,
+        such as your Application Load Balancers, Network Load Balancers, Elastic IP addresses or Amazon EC2 instances,
+        in a single or in multiple AWS regions.
+
+        AWS Global Accelerator uses endpoint weights to determine the proportion of traffic that is directed to
+        endpoints in an endpoint group, and traffic dials to control the percentage of traffic that is directed to an
+        endpoint group (an AWS region where your application is deployed).
+
+        While relying on the DNS service is a great option for blue/green deployments, it may not fit use-cases that
+        require a fast and controlled transition of the traffic. Some client devices and internet resolvers cache DNS
+        answers for long periods; this DNS feature improves the efficiency of the DNS service as it reduces the DNS
+        traffic across the Internet, and serves as a resiliency technique by preventing authoritative name-server
+        overloads. The downside of this in blue/green deployments is that you don’t know how long it will take before
+        all of your users receive updated IP addresses when you update a record, change your routing preference or when
+        there is an application failure.
+
+        With AWS Global Accelerator, you can shift traffic gradually or all at once between the blue and the green
+        environment and vice-versa without being subject to DNS caching on client devices and internet resolvers,
+        traffic dials and endpoint weights changes are effective within seconds.
+    </p>
+    <p>
+        Throttling is the process of limiting the number of requests an authorized program can submit to a given
+        operation in a given amount of time.
+
+        Amazon API Gateway, Amazon SQS and Amazon Kinesis - To prevent your API from being overwhelmed by too many
+        requests, Amazon API Gateway throttles requests to your API using the token bucket algorithm, where a token
+        counts for a request. Specifically, API Gateway sets a limit on a steady-state rate and a burst of request
+        submissions against all APIs in your account. In the token bucket algorithm, the burst is the maximum bucket
+        size.
+
+        Amazon SQS - Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to
+        decouple and scale microservices, distributed systems, and serverless applications. Amazon SQS offers buffer
+        capabilities to smooth out temporary volume spikes without losing messages or increasing latency.
+
+        Amazon Kinesis - Amazon Kinesis is a fully managed, scalable service that can ingest, buffer, and process
+        streaming data in real-time.
+    </p>
+    <p>
+        Use Amazon S3 Transfer Acceleration to enable faster file uploads into the destination S3 bucket - Amazon S3
+        Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client
+        and an S3 bucket. Transfer Acceleration takes advantage of Amazon CloudFront’s globally distributed edge
+        locations. As the data arrives at an edge location, data is routed to Amazon S3 over an optimized network path.
+
+        Use multipart uploads for faster file uploads into the destination S3 bucket - Multipart upload allows you to
+        upload a single object as a set of parts. Each part is a contiguous portion of the object's data. You can upload
+        these object parts independently and in any order. If transmission of any part fails, you can retransmit that
+        part without affecting other parts. After all parts of your object are uploaded, Amazon S3 assembles these parts
+        and creates the object. In general, when your object size reaches 100 MB, you should consider
+        using multipart uploads instead of uploading the object in a single operation. Multipart upload provides
+        improved throughput, therefore it facilitates faster file uploads.
+    </p>
+    <p>
+        Consolidated billing has not been enabled. All the AWS accounts should fall under a single consolidated billing
+        for the monthly fee to be charged only once - If your organization has multiple AWS accounts, then you can
+        subscribe multiple AWS Accounts to AWS Shield Advanced by individually enabling it on each account using the AWS
+        Management Console or API. You will pay the monthly fee once as long as the AWS accounts are all under a single
+        consolidated billing, and you own all the AWS accounts and resources in those accounts.
+    </p>
+    <p>
+        Create a new launch configuration to use the correct instance type. Modify the Auto Scaling group to use this
+        new launch configuration. Delete the old launch configuration as it is no longer needed
+
+        A launch configuration is an instance configuration template that an Auto Scaling group uses to launch EC2
+        instances. When you create a launch configuration, you specify information for the instances. Include the ID of
+        the Amazon Machine Image (AMI), the instance type, a key pair, one or more security groups, and a block device
+        mapping.
+
+        It is not possible to modify a launch configuration once it is created.
+    </p>
+    <p>Leverage AWS Config managed rule to check if any third-party SSL/TLS certificates imported into ACM are marked
+        for expiration within 30 days. Configure the rule to trigger an SNS notification to the security team if any
+        certificate expires within 30 days
+
+        AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private
+        Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal
+        connected resources. SSL/TLS certificates are used to secure network communications and establish the identity
+        of websites over the Internet as well as resources on private networks.
+
+        AWS Config provides a detailed view of the configuration of AWS resources in your AWS account. This includes how
+        the resources are related to one another and how they were configured in the past so that you can see how the
+        configurations and relationships change over time.
+        Certificates provided by ACM are automatically renewed. ACM does not automatically renew the certificates that
+        you import. The rule is NON_COMPLIANT if your certificates are about to expire.</p>
+    <p>
+
+    </p>
+    Use Amazon Cognito User Pools - A user pool is a user directory in Amazon Cognito. You can leverage Amazon Cognito
+    User Pools to either provide built-in user management or integrate with external identity providers, such as
+    Facebook, Twitter, Google+, and Amazon. Whether your users sign-in directly or through a third party, all members of
+    the user pool have a directory profile that you can access through a Software Development Kit (SDK).
+
+    User pools provide: 1. Sign-up and sign-in services. 2. A built-in, customizable web UI to sign in users. 3. Social
+    sign-in with Facebook, Google, Login with Amazon, and Sign in with Apple, as well as sign-in with SAML identity
+    providers from your user pool. 4. User directory management and user profiles. 5. Security features such as
+    multi-factor authentication (MFA), checks for compromised credentials, account takeover protection, and phone and
+    email verification. 6. Customized workflows and user migration through AWS Lambda triggers.
+
+    After creating an Amazon Cognito user pool, in API Gateway, you must then create a COGNITO_USER_POOLS authorizer
+    that uses the user pool.
+    <p>
+        If you have an existing Identity Provider (IdP), you can use an API Gateway Lambda authorizer to invoke a Lambda
+        function to authenticate/validate a given user against your IdP. You can use a Lambda authorizer for custom
+        validation logic based on identity metadata.
+
+        A Lambda authorizer can send additional information derived from a bearer token or request context values to
+        your backend service. For example, the authorizer can return a map containing user IDs, user names, and scope.
+        By using Lambda authorizers, your backend does not need to map authorization tokens to user-centric data,
+        allowing you to limit the exposure of such information to just the authorization function.
+
+        When using Lambda authorizers, AWS strictly advises against passing credentials or any sort of sensitive data
+        via query string parameters or headers, so this is not as secure as using Cognito User Pools.
+
+        In addition, both these options do not offer built-in user management.
+    </p>
+    <p>Amazon ElastiCache for Redis is a blazing fast in-memory data store that provides sub-millisecond latency to
+        power internet-scale real-time applications.
+
+        Amazon ElastiCache for Redis is a great choice for real-time transactional and analytical processing use cases
+        such as caching, chat/messaging, gaming leaderboards, geospatial, machine learning, media streaming, queues,
+        real-time analytics, and session store.
+
+        ElastiCache for Redis supports replication, high availability, and cluster sharding right out of the box. IAM
+        Auth is not supported by ElastiCache.
+
+        Redis authentication tokens enable Redis to require a token (password) before allowing clients to execute
+        commands, thereby improving data security.</p>
+
+    <p>A security group acts as a virtual firewall that controls the traffic for one or more instances. You can add
+        rules to each security group that allows traffic to or from its associated instances. You can modify the rules
+        for a security group at any time; the new rules are automatically applied to all instances that are associated
+        with the security group.</p>
+    <p>
+        AWS DataSync is an online data transfer service that simplifies, automates, and accelerates copying large
+        amounts of data between on-premises storage systems and AWS Storage services, as well as between AWS Storage
+        services.
+
+        You can use AWS DataSync to migrate data located on-premises, at the edge, or in other clouds to Amazon S3,
+        Amazon EFS, Amazon FSx for Windows File Server, Amazon FSx for Lustre, Amazon FSx for OpenZFS, and Amazon FSx
+        for NetApp ONTAP.
+    </p>
+    <p>To establish a private connection between your virtual private cloud (VPC) and the Amazon EFS API, you can create
+        an interface VPC endpoint. You can also access the interface VPC endpoint from on-premises environments or other
+        VPCs using AWS VPN, AWS Direct Connect, or VPC peering.
+
+        AWS Direct Connect provides three types of virtual interfaces: public, private, and transit.For the given use case, you can send data over the Direct Connect connection to an AWS PrivateLink interface VPC endpoint for Amazon EFS by using a private VIF.
+
+        Using task scheduling in AWS DataSync, you can periodically execute a transfer task from your source storage system to the destination. You can use the DataSync scheduled task to send the video files to the EFS file system every 24 hours.</p>
+
+</body>
