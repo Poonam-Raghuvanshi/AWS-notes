@@ -26,12 +26,22 @@
         single bucket. Policies can be attached to users, groups, or Amazon S3 buckets, enabling centralized management
         of permissions. With bucket policies, you can grant users within your AWS Account or other AWS Accounts access
         to your Amazon S3 resources.
-
-        You can further restrict access to specific resources based on certain conditions. For example, you can restrict
-        access based on request time (Date Condition), whether the request was sent using SSL (Boolean Conditions), a
-        requester’s IP address (IP Address Condition), or based on the requester's client application (String
-        Conditions). To identify these conditions, you use policy keys.</p>
-        <img src="../images/s3.PNG"/>
+    </p>
+    <p>
+        <b>You can further restrict access to specific resources based on certain conditions. For example, you can
+            restrict access based on request time (Date Condition), whether the request was sent using SSL (Boolean
+            Conditions), a requester’s IP address (IP Address Condition), or based on the requester's client application
+            (String Conditions). To identify these conditions, you use policy keys.</b>
+    </p>
+    <p class="heading">S3 Versioning</p>
+    <p> Versioning is a means of keeping multiple variants of an object in the same bucket. You can use versioning to
+        preserve, retrieve, and restore every version of every object stored in your Amazon S3 bucket.
+        Versioning-enabled buckets enable you to recover objects from accidental deletion or overwrite.</p>
+    <p class="heading">Enable MFA delete on the bucket</p>
+    <p>To provide additional protection, multi-factor authentication (MFA) delete can
+        be enabled. MFA delete requires secondary authentication to take place before objects can be permanently deleted
+        from an Amazon S3 bucket. </p>
+    <img src="../images/s3.PNG" />
 </body>
 
 </html>
