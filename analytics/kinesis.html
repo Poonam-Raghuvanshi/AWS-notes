@@ -24,6 +24,22 @@
 
 
     </p>
+    <p class="heading">FAN out pattern</p>
+    <p>KDS can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website
+        clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking
+        events. By default, the 2MB/second/shard output is shared between all of the applications consuming data from
+        the stream. </p>
+    <p> <b> You should use enhanced fan-out if you have multiple consumers retrieving data from a stream in
+            parallel. With enhanced fan-out developers can register stream consumers to use enhanced fan-out and receive
+            their own 2MB/second pipe of read throughput per shard, and this throughput automatically scales with the
+            number of shards in a stream.</b></p>
+    <p class="heading">Amazon Kinesis Data Firehose</p>
+    <p> Easiest way to reliably <b>load streaming data into data lakes, data stores, and analytics tools</b>. It is a
+        fully managed service that automatically scales to match the throughput of your data and requires no ongoing
+        administration. It can also batch, compress, transform, and encrypt the data before loading it, minimizing the
+        amount of storage used at the destination and increasing security. <b> Kinesis Data Firehose can only write to
+            S3,Redshift, Elasticsearch or Splunk</b>. </p>
+    <img src="../images/kn.jpg" />
 </body>
 
 </html>

@@ -18,6 +18,18 @@
 
     <p>AWS Database Migration Service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous
         migrations between different database platforms, such as Oracle or Microsoft SQL Server to Amazon Aurora.</p>
+    <p> AWS DMS lets you expand the existing application to stream data from
+        Amazon S3 into Amazon Kinesis Data Streams for real-time analytics without writing and maintaining new code. AWS
+        DMS supports specifying Amazon S3 as the source and streaming services like Kinesis and Amazon Managed Streaming
+        of Kafka (Amazon MSK) as the target.</p>
+    <p> AWS DMS allows migration of full and change data capture (CDC) files to these services. AWS DMS performs this
+        task out of box without any complex configuration or code development. You
+        can also configure an AWS DMS replication instance to scale up or down depending on the workload.
+    </p>
+    <p>AWS DMS supports Amazon S3 as the source and Kinesis as the target, so data stored in an S3 bucket is streamed
+        to Kinesis. Several consumers, such as AWS Lambda, Amazon Kinesis Data Firehose, Amazon Kinesis Data Analytics,
+        and the Kinesis Consumer Library (KCL), can consume the data concurrently to perform real-time analytics on the
+        dataset. Each AWS service in this architecture can scale independently as needed.</p>
 
 </body>
 

@@ -14,6 +14,14 @@
         capacity while automating time-consuming administration tasks such as hardware provisioning, database setup,
         patching, and backups.
     </p>
+    <p class="heading">Configure RDS to use SSL for data in transit </p>
+    <p>
+        <b> Amazon RDS creates an SSL certificate and installs the certificate on the DB instance when the instance is
+            provisioned.</b> For MySQL, you launch the MySQL client using the --ssl_ca parameter to reference the public
+        key to encrypt connections. Using SSL, you can encrypt a PostgreSQL connection between your applications and
+        your PostgreSQL DB instances. You can also force all connections to your PostgreSQL DB instance to use SSL.
+
+    </p>
 </body>
 
 </html>

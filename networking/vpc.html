@@ -24,17 +24,8 @@
         Security Groups can be associated with a NAT instance
 
         NAT instance supports port forwarding</p>
-    <p class="heading"> VPC endpoints </p>
-    <p>AWS customers can access Amazon Simple Queue Service (Amazon SQS) from their Amazon Virtual Private Cloud (Amazon
-        VPC) using VPC endpoints, without using public IPs, and without needing to traverse the public internet. VPC
-        endpoints for Amazon SQS are powered by AWS PrivateLink, a highly available, scalable technology that enables
-        you to privately connect your VPC to supported AWS services.
+    <p class="heading"> </p>
 
-        Amazon VPC endpoints are easy to configure. They also provide reliable connectivity to Amazon SQS without
-        requiring an internet gateway, Network Address Translation (NAT) instance, VPN connection, or AWS Direct Connect
-        connection. With VPC endpoints, the data between your Amazon VPC and Amazon SQS queue is transferred within the
-        Amazon network, helping protect your instances from internet traffic.
-    </p>
     <p class="heading"> AWS PrivateLink </p>
     <p>
 
@@ -79,7 +70,66 @@
         between VPC A - VPC B , and VPC A - VPC C. Then, there is no VPC peering connection between
         VPC B and VPC C) Instead of using VPC peering, you can use an AWS Transit Gateway that acts as a network transit
         hub, to interconnect your VPCs or connect your VPCs with on-premises networks.</p>
-    <p><b>Gateway endpoints are used for S3 and DynamoDB</b></p>
+    <p class="heading"> VPC Endpoints</p>
+    <p class="point"> Interface Endpoints</p>
+    <p>
+        Elastic Network Interface with a private IP address from the IP address range of your subnet that serves as an
+        entry point for traffic destined to a supported service. Interface endpoints extend the functionality of gateway
+        endpoints by using private IP addresses to
+        route requests to Amazon S3 from within your VPC, on premises, or from a VPC in another AWS Region using VPC
+        peering or AWS Transit Gateway.</p>
+    <p class="point"> Gateway Endpoint</p>
+    <p>You specify as a target for a route in your route table for traffic
+        destined to a supported AWS service. The following AWS services are supported: Amazon S3 and DynamoDB.
+
+        You can use two types of VPC endpoints to access Amazon S3: gateway endpoints and interface endpoints. A gateway
+        endpoint is a gateway that you specify in your route table to access Amazon S3 from your VPC over the AWS
+        network.
+
+        You must remember that these two services use a VPC gateway endpoint. The rest of the AWS services use VPC
+        interface endpoints.</p>
+    <p class="point"> VPC endpoints for Amazon SQS</p>
+    <p>Use VPC endpoints, for VPC-SQS without using public IPs, and without needing to traverse the public internet. are
+        <b> powered by AWS PrivateLink</b> , a highly available, scalable technology that enables
+        you to privately connect your VPC to supported AWS services.
+
+        Amazon VPC endpoints are easy to configure. They also provide reliable connectivity to Amazon SQS without
+        requiring an internet gateway, Network Address Translation (NAT) instance, VPN connection, or AWS Direct Connect
+        connection. With VPC endpoints, the data between your Amazon VPC and Amazon SQS queue is transferred within the
+        Amazon network, helping protect your instances from internet traffic.
+    </p>
+    <p class="heading"> Amazon VPC console wizard</p>
+    <p>
+
+        <span class="point"> VPC with a single public subnet</span> -
+        Virtual private cloud (VPC) + single public subnet + internet gateway to enable communication over the internet.
+        RECOMMENDATION- If you need to run a single-tier, public-facing web application, such as a blog or a simple
+        website.
+    </p>
+    <p>
+
+        <span class="point"> VPC with public and private subnets (NAT) </span>- Virtual private cloud (VPC) + public
+        subnet + a private subnet. RECOMMENDATION- if you want to run a public-facing
+        web application while maintaining back-end servers that aren't publicly accessible. A common example is a
+        multi-tier website, with the web servers in a public subnet and the database servers in a private subnet. You
+        can set up security and routing so that the web servers can communicate with the database servers.
+    </p>
+    <p>
+
+        <span class="point"> VPC with public and private subnets and AWS Site-to-Site VPN access</span> - Virtual
+        private cloud (VPC)+ a public subnet and a private subnet, and a virtual private gateway
+        to enable communication with your network over an IPsec VPN tunnel. RECOMMENDATION- if you want to
+        extend your network into the cloud and also directly access the Internet from your VPC. This scenario enables
+        you to run a multi-tiered application with a scalable web front end in a public subnet and to house your data in
+        a private subnet that is connected to your network by an IPsec AWS Site-to-Site VPN connection.
+    </p>
+    <p>
+
+        <span class="point"> VPC with a private subnet only and AWS Site-to-Site VPN access</span> - Virtual private
+        cloud (VPC) + a single private subnet, and a virtual private gateway to enable communication
+        with your network over an IPsec VPN tunnel. RECOMMENDATION- if you want to extend your network into the cloud
+        using Amazon's infrastructure without exposing your network to the Internet.
+    </p>
 </body>
 
 </html>
