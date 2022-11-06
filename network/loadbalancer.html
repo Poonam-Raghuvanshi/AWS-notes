@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> loadbalancer </title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <p class="main-heading">Application Load Balancer</p>
+    <p>
+     
+    <ul>
+        <li>An Application Load Balancer periodically sends requests to its registered targets to test their status.
+            These tests are called health checks.
+
+        </li>
+        <li>
+
+            Each load balancer node routes requests only to the healthy targets in the enabled Availability Zones for
+            the load balancer. Each load balancer node checks the health of each target, using the health check settings
+            for the target groups with which the target is registered. If a target group contains only unhealthy
+            registered targets, the load balancer nodes route requests across its unhealthy targets.
+
+        </li>
+        <li> <b> You must ensure that your load balancer can communicate with registered targets on both the listener port
+            and the health check port. </b> Whenever you add a listener to your load balancer or update the health check port
+            for a target group used by the load balancer to route requests, you must verify that the security groups
+            associated with the load balancer allow traffic on the new port in both directions.
+
+            Application Load Balancer Configuration for Security Groups and Health Check Routes:</li>
+
+    </ul>
+
+
+    </p>
+</body>
+
+</html>
