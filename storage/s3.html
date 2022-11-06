@@ -9,7 +9,7 @@
 
 <body>
     <p class="main-heading">Amazon S3</p>
-    <p class="heading"></p>
+
     <p>
         You can use Amazon S3 to host a static website. On a static website, individual web pages include static
         content. They might also contain client-side scripts. To host a static website on Amazon S3, you configure an
@@ -21,6 +21,17 @@
         <b> Distributing the static content through S3 allows us to offload most of the network usage to S3 and free up
             our applications running on ECS.</b>
     </p>
+    <p class="heading">S3 Bucket Policies</p>
+    <p>Bucket policies in Amazon S3 can be used to add or deny permissions across some or all of the objects within a
+        single bucket. Policies can be attached to users, groups, or Amazon S3 buckets, enabling centralized management
+        of permissions. With bucket policies, you can grant users within your AWS Account or other AWS Accounts access
+        to your Amazon S3 resources.
+
+        You can further restrict access to specific resources based on certain conditions. For example, you can restrict
+        access based on request time (Date Condition), whether the request was sent using SSL (Boolean Conditions), a
+        requester’s IP address (IP Address Condition), or based on the requester's client application (String
+        Conditions). To identify these conditions, you use policy keys.</p>
+        <img src="../images/s3.PNG"/>
 </body>
 
 </html>
