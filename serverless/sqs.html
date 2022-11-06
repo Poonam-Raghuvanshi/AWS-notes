@@ -14,26 +14,29 @@
         and serverless applications. SQS eliminates the complexity and overhead associated with managing and operating
         message oriented middleware, and empowers developers to focus on differentiating work. Using SQS, you can send,
         store, and receive messages between software components at any volume, without losing messages or requiring
-        other services to be available.
+        other services to be available.  SQS offers two types of message queues.
 
-        SQS offers two types of message queues. Standard queues offer maximum throughput, best-effort ordering, and
-        at-least-once delivery. SQS FIFO queues are designed to guarantee that messages are processed exactly once, in
-        the exact order that they are sent.
-
+    <p class="heading"> Standard Queue</p>
+    <p>
+        Standard queues offer maximum throughput, best-effort ordering, and
+        at-least-once delivery.
     </p>
-    <p>By default, FIFO queues support up to 3,000 messages per second with batching, or up to 300 messages per
-        second (300 send, receive, or delete operations per second) without batching. Therefore, using batching you can
-        meet
-        a throughput requirement of upto 3,000 messages per second.
-
-        The name of a FIFO queue must end with the .fifo suffix. The suffix counts towards the 80-character queue name
-        limit. To determine whether a queue is FIFO, you can check whether the queue name ends with the suffix.
+    <p class="heading"> FIFO Queue</p>
+    <p>SQS FIFO queues are designed to guarantee that messages are processed exactly once, in
+        the exact order that they are sent.</p>
+    <p> <b>By default, FIFO queues support up to 3,000 messages per second with batching, or up to 300 messages per
+            second (300 send, receive, or delete operations per second) without batching. </b>Therefore, using batching
+        you can meet a throughput requirement of upto 3,000 messages per second. </p>
+    <p>
+        <b> The name of a FIFO queue must end with the .fifo suffix. </b> The suffix counts towards the 80-character
+        queue name limit. To determine whether a queue is FIFO, you can check whether the queue name ends with the
+        suffix.
 
         If you have an existing application that uses standard queues and you want to take advantage of the ordering or
         exactly-once processing features of FIFO queues, you need to configure the queue and your application correctly.
-        You
-        can't convert an existing standard queue into a FIFO queue. To make the move, you must either create a new FIFO
-        queue for your application or delete your existing standard queue and recreate it as a FIFO queue.</p>
+        You can't convert an existing standard queue into a FIFO queue. To make the move, you must either create a new
+        FIFO queue for your application or delete your existing standard queue and recreate it as a FIFO queue.
+    </p>
 </body>
 
 </html>
