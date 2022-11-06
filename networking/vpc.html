@@ -130,6 +130,21 @@
         with your network over an IPsec VPN tunnel. RECOMMENDATION- if you want to extend your network into the cloud
         using Amazon's infrastructure without exposing your network to the Internet.
     </p>
+    <p class="heading"> VPC sharing</p>
+    <p> <b> It (part of Resource Access Manager) allows multiple AWS accounts to create their application resources
+            such as EC2 instances, RDS databases, Redshift clusters, and Lambda functions, into shared and
+            centrally-managed Amazon Virtual Private Clouds (VPCs). VPC (owner)
+            shares one or more subnets with other accounts (participants) that belong to the same organization from AWS
+            Organizations.</b>
+        <br />
+         After a subnet is shared, the participants can view, create, modify, and delete their application
+        resources in the subnets shared with them. Participants cannot view, modify, or delete resources that belong to
+        other participants or the VPC owner.
+
+        You can share Amazon VPCs to leverage the implicit routing within a VPC for applications that require a high
+        degree of interconnectivity and are within the same trust boundaries. This reduces the number of VPCs that you
+        create and manage while using separate accounts for billing and access control.
+    </p>
 </body>
 
 </html>
