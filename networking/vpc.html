@@ -63,12 +63,23 @@
         connectivity. </p>
     <p class="heading"> Network Address Translation (NAT) instance</p>
     <p>
-        You can use a network address translation (NAT) instance in a public subnet in your VPC to enable instances in
+        Network address translation (NAT) instance in a public subnet in your VPC to enable instances in
         the private subnet to initiate outbound IPv4 traffic to the Internet or other AWS services, but prevent the
         instances from receiving inbound traffic initiated by someone on the Internet. Amazon provides Amazon Linux AMIs
         that are configured to run as NAT instances. These AMIs include the string amzn-ami-vpc-nat in their names, so
-        you can search for them in the Amazon EC2 console. This option is ruled out because NAT instances are used to
+        you can search for them in the Amazon EC2 console. NAT instances are used to
         provide internet access to any instances in a private subnet.</p>
+    <p class="heading"> Egress-only internet gateway</p>
+    <p>Horizontally scaled, redundant, and highly available VPC component that
+        allows outbound communication over IPv6 from instances in your VPC to the internet, and prevents the internet
+        from initiating an IPv6 connection with your instances.</p>
+    <p class="heading"> VPC peering</p>
+    <p> <b>Connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or
+            IPv6 addresses</b>. Transitive Peering does not work for VPC peering connections (VPC peering connection
+        between VPC A - VPC B , and VPC A - VPC C. Then, there is no VPC peering connection between
+        VPC B and VPC C) Instead of using VPC peering, you can use an AWS Transit Gateway that acts as a network transit
+        hub, to interconnect your VPCs or connect your VPCs with on-premises networks.</p>
+    <p><b>Gateway endpoints are used for S3 and DynamoDB</b></p>
 </body>
 
 </html>
