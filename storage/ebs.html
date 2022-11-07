@@ -20,6 +20,15 @@
     <p> Encryption operations occur on the servers that host EC2 instances, ensuring the security of both data-at-rest
         and data-in-transit between an instance and its attached EBS storage.
     </p>
+    <p class="heading"> DELETE ON TERMINATION</p>
+    <p>
+
+        When you launch an instance, the root device volume contains the image used to boot the instance. You can choose
+        between AMIs backed by Amazon EC2 instance store and AMIs backed by Amazon EBS.
+
+       <b> By default, the root volume for an AMI backed by Amazon EBS is deleted when the instance terminates.</b> You can
+        change the default behavior to ensure that the volume persists after the instance terminates. Non-root EBS
+        volumes remain available even after you terminate an instance to which the volumes were attached. </p>
 </body>
 
 </html>

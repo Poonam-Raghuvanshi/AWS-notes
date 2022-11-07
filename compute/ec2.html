@@ -105,32 +105,36 @@
     <p><b>Host spread level placement groups </b> are only available with AWS Outposts. For host spread level placement
         groups, there are no restrictions for running instances per Outposts.</p>
     <p class="heading"> EC2 Instance Types</p>
-    <p class="point"> EC2 dedicated hosts</p>
-    <p>
-        Amazon EC2 instances on <b>physical servers that are dedicated for your use</b>.Dedicated Hosts give you
+    <p><span class="point"> EC2 dedicated hosts</span>
+
+        - <b>physical servers that are dedicated for your use</b>.Dedicated Hosts give you
         additional visibility and control over how instances are placed on a physical server,and you can reliably use
         the same physical server over time. <b> Let you use your existing server-bound software licenses </b> and
         address corporate compliance and regulatory requirements.
     </p>
-    <p class="point"> EC2 dedicated instances</p>
-    <p>
-        <b>Amazon EC2 instances that run in a VPC on hardware that's dedicated to a single customer</b>. Your dedicated
+    <p> <span class="point"> EC2 dedicated instances</span>
+
+        - <b>Instances that run in a VPC on hardware that's dedicated to a single customer</b>. Your dedicated
         instances are physically isolated at the host hardware level from instances that belong to other AWS accounts.
         Dedicated instances may share hardware with other instances from the same AWS account that are not dedicated
         instances.
 
     </p>
-    <p class="point">On-Demand Instances</p>
     <p>
+        <span class="point"> On-Demand Instances</span> -
         <b> Pay, by the second, for the instances that you launch.</b>
     </p>
-    <p class="point"> EC2 reserved instances</p>
-    <p>
+
+    <p><span class="point"> EC2 reserved instances</span> -
         Reduce your Amazon EC2 costs by making a commitment to a consistent instance configuration,
         including instance type and Region, for a term of 1 or 3 years.
 
     </p>
-    <p class="point"> Launch template and launch configuration</p>
+    <p> <span class="point"> Spot Instances</span> - Unused EC2 instance that is available for less than the On-Demand
+        price. Because Spot Instances enable you to request unused EC2 instances at steep discounts, you can lower your
+        Amazon EC2 costs significantly. <b>Spot Instances are a cost-effective choice if you can be flexible about when
+            your applications run and if your applications can be interrupted </b>.</p>
+    <p class="heading"> Launch template and launch configuration</p>
     <p>Similar but Launch template specifies instance <b> configuration information such as the ID of the Amazon Machine
             Image (AMI), the instance type, a key pair, security groups, and the other parameters that you use to launch
             EC2 instances</b>. Also, a launch template <b>allows you to have multiple versions of a template</b> and
