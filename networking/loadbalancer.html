@@ -10,7 +10,7 @@
 <body>
     <p class="main-heading">Application Load Balancer</p>
     <p>
-     
+
     <ul>
         <li>An Application Load Balancer periodically sends requests to its registered targets to test their status.
             These tests are called health checks.
@@ -24,15 +24,33 @@
             registered targets, the load balancer nodes route requests across its unhealthy targets.
 
         </li>
-        <li> <b> You must ensure that your load balancer can communicate with registered targets on both the listener port
-            and the health check port. </b> Whenever you add a listener to your load balancer or update the health check port
+        <li> <b> You must ensure that your load balancer can communicate with registered targets on both the listener
+                port
+                and the health check port. </b> Whenever you add a listener to your load balancer or update the health
+            check port
             for a target group used by the load balancer to route requests, you must verify that the security groups
             associated with the load balancer allow traffic on the new port in both directions.
 
             Application Load Balancer Configuration for Security Groups and Health Check Routes:</li>
 
     </ul>
-    <img src="../images/security-g.jpg"/>
+    <p class="main-heading">Network Load Balancer</p>
+
+    <p>Functions at the fourth layer of the Open Systems Interconnection (OSI) model. It can
+        handle millions of requests per second. After the load balancer receives a connection request, it selects a
+        target from the target group for the default rule. It attempts to open a TCP connection to the selected target
+        on the port specified in the listener configuration. </p>
+        <p class="heading">Request Routing and IP Addresses</p>
+
+        <p>- If you specify targets using an instance ID, traffic is routed to instances using the primary private IP address
+        specified in the primary network interface for the instance. The load balancer rewrites the destination IP
+        address from the data packet before forwarding it to the target instance.
+
+        If you specify targets using IP addresses, you can route traffic to an instance using any private IP address
+        from one or more network interfaces. This enables multiple applications on an instance to use the same port.
+        Note that each network interface can have its security group. The load balancer rewrites the destination IP
+        address before forwarding it to the target.</p>
+    <img src="../images/security-g.jpg" />
 
 
     </p>

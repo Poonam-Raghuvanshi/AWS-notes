@@ -83,6 +83,42 @@
             metadata, are strongly consistent</b>. What you write is what you will read, and the results of a LIST will
         be an accurate reflection of what’s in the bucket.
     </p>
+    <p class="heading"> S3 Copy Data</p>
+    <p>Copy data from the source bucket to the destination bucket using the aws S3 sync command
+
+        The aws S3 sync command uses the CopyObject APIs to copy objects between S3 buckets. The sync command lists the
+        source and target buckets to identify objects that are in the source bucket but that aren't in the target
+        bucket. The command also identifies objects in the source bucket that have different LastModified dates than the
+        objects that are in the target bucket. The sync command on a versioned bucket copies only the current version of
+        the object—previous versions aren't copied. By default, this preserves object metadata, but the access control
+        lists (ACLs) are set to FULL_CONTROL for your AWS account, which removes any additional ACLs. If the operation
+        fails, you can run the sync command again without duplicating previously copied objects.
+
+        You can use the command like so:
+
+        aws s3 sync s3://DOC-EXAMPLE-BUCKET-SOURCE s3://DOC-EXAMPLE-BUCKET-TARGET
+
+        Set up S3 batch replication to copy objects across S3 buckets in different Regions using S3 console
+
+        S3 Batch Replication provides you a way to replicate objects that existed before a replication configuration was
+        in place, objects that have previously been replicated, and objects that have failed replication. This is done
+        through the use of a Batch Operations job.</p>
+    <p>
+
+        You should note that batch replication differs from live replication which continuously and automatically
+        replicates new objects across Amazon S3 buckets. You cannot directly use the AWS S3 console to configure
+        cross-Region replication for existing objects. By default, replication only supports copying new Amazon S3
+        objects after it is enabled using the AWS S3 console. Replication enables automatic, asynchronous copying of
+        objects across Amazon S3 buckets. Buckets that are configured for object replication can be owned by the same
+        AWS account or by different accounts. Object may be replicated to a single destination bucket or multiple
+        destination buckets. Destination buckets can be in different AWS Regions or within the same Region as the source
+        bucket.
+
+        If you want to enable live replication for existing objects for your bucket, you must contact AWS Support and
+        raise a support ticket. This is required to ensure that replication is configured correctly.</p>
+    <p class="heading"> S3 Transfer Acceleration</p>
+    <p> Bucket-level feature that <b>enables fast, easy, and secure transfers of files over
+            long distances between your client and an S3 bucket</b>.</p>
 </body>
 
 </html>
