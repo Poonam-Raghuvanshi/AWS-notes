@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Infrastructure </title>
+    <title> IAM </title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -56,12 +56,20 @@
         </ul>
 
     </section>
+    <p class="heading">EC2 Instance Access </p>
     <p>Instead, you should use an IAM role to manage temporary credentials for applications that run on an EC2 instance.
         When you use a role, you don't have to distribute long-term credentials (such as a username and password or
         access keys) to an EC2 instance. The role supplies temporary permissions that applications can use when they
         make calls to other AWS resources. When you launch an EC2 instance, you specify an IAM role to associate with
         the instance. Applications that run on the instance can then use the role-supplied temporary credentials to sign
         API requests.</p>
+    <p class="heading"> Lambda Access S3 </p>
+    <p>If the IAM role that you create for the Lambda function is in the same AWS account as the bucket, then you don't
+        need to grant Amazon S3 permissions on both the IAM role and the bucket policy. Instead, you can grant the
+        permissions on the IAM role and then verify that the bucket policy doesn't explicitly deny access to the Lambda
+        function role. If the IAM role and the bucket are in different accounts, then you need to grant Amazon S3
+        permissions on both the IAM role and the bucket policy. Therefore, this is the right way of giving access to AWS
+        Lambda for the given use-case.</p>
 
 </body>
 
