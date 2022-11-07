@@ -13,22 +13,22 @@ body {
 
 .box:nth-child(1) {
   width: 25%;
-  background-color: rgb(190, 139, 139);
+  background-color: rgb(241, 212, 212);
 }
 
 .box:nth-child(2) {
   width: 25%;
-  background-color: rgb(164, 209, 164);
+  background-color: rgb(189, 216, 189);
 }
 
 .box:nth-child(3) {
   width: 25%;
-  background-color: rgb(240, 240, 172);
+  background-color: rgb(224, 224, 192);
 }
 
 .box:nth-child(4) {
   width: 25%;
-  background-color: rgb(177, 187, 245);
+  background-color: rgb(202, 206, 230);
 }
 .heading {
     font-size: 25px;

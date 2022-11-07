@@ -137,7 +137,7 @@
             shares one or more subnets with other accounts (participants) that belong to the same organization from AWS
             Organizations.</b>
         <br />
-         After a subnet is shared, the participants can view, create, modify, and delete their application
+        After a subnet is shared, the participants can view, create, modify, and delete their application
         resources in the subnets shared with them. Participants cannot view, modify, or delete resources that belong to
         other participants or the VPC owner.
 
@@ -145,6 +145,20 @@
         degree of interconnectivity and are within the same trust boundaries. This reduces the number of VPCs that you
         create and manage while using separate accounts for billing and access control.
     </p>
+    <p class="heading"> VPN CloudHub</p>
+    <p>
+
+        If you have multiple AWS Site-to-Site VPN connections, you can provide secure communication between sites using
+        the AWS VPN CloudHub. This enables your remote sites to communicate with each other, and not just with the VPC.
+        Sites that use AWS Direct Connect connections to the virtual private gateway can also be part of the AWS VPN
+        CloudHub. The VPN CloudHub operates on a simple hub-and-spoke model that you can use with or without a VPC. This
+        design is suitable if you have multiple branch offices and existing internet connections and would like to
+        implement a convenient, potentially low-cost hub-and-spoke model for primary or backup connectivity between
+        these remote offices.
+
+        Per the given use-case, the corporate headquarters has an AWS Direct Connect connection to the VPC and the
+        branch offices have Site-to-Site VPN connections to the VPC. Therefore using the AWS VPN CloudHub, branch
+        offices can send and receive data with each other as well as with their corporate headquarters.</p>
 </body>
 
 </html>
