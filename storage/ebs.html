@@ -11,8 +11,13 @@
     <p class="main-heading"> Amazon Elastic Block Store (Amazon EBS)</p>
     <p>
         Provides block-level storage volumes for use with EC2 instances. </p>
-    <p> <b>When
-            you create an encrypted EBS volume and attach it to a supported instance type, data stored at rest on the
+    <p>Specific Availability Zone - attach it to an instance in that same Availability Zone. To make a volume available
+        outside of the Availability Zone, you can create a snapshot and
+        restore that snapshot to a new volume anywhere in that Region. You can copy snapshots to other Regions and then
+        restore them to new volumes there.</p>
+    <p> <b>Persist independently from the life of the instance. </b> You can dynamically change the configuration of a
+        volume attached to an instance.</p>
+    <p> <b>Encrypted EBS volume attached to a supported instance type, data stored at rest on the
             volume, data moving between the volume and the instance, snapshots created from the volume and volumes
             created from those snapshots are all encrypted. </b></p>
     <p> It uses AWS Key Management Service (AWS KMS) customer master keys (CMK) when creating encrypted volumes and
@@ -26,9 +31,29 @@
         When you launch an instance, the root device volume contains the image used to boot the instance. You can choose
         between AMIs backed by Amazon EC2 instance store and AMIs backed by Amazon EBS.
 
-       <b> By default, the root volume for an AMI backed by Amazon EBS is deleted when the instance terminates.</b> You can
+        <b> By default, the root volume for an AMI backed by Amazon EBS is deleted when the instance terminates.</b> You
+        can
         change the default behavior to ensure that the volume persists after the instance terminates. Non-root EBS
-        volumes remain available even after you terminate an instance to which the volumes were attached. </p>
+        volumes remain available even after you terminate an instance to which the volumes were attached.
+    </p>
+    <p class="heading"> Volume Types</p>
+    <p>
+        <span class="point"> General Purpose SSD volumes IPOS- 16,000 Throughput-1000</span> -
+        <b> Balance price and performance for a wide variety of transactional workloads. Use case- boot volumes,
+            medium-size single instance databases, and development and test environments.</b>
+    </p>
+
+    <p><span class="point"> Provisioned IOPS SSD volumes : IPOS- 256,000 Throughput-4000</span> -
+        <b> I/O-intensive workloads </b>that are sensitive to storage performance and consistency.
+        They provide a consistent IOPS rate that you specify when you create the volume. This enables you to predictably
+        scale to tens of thousands of IOPS per instance. <b>Most durable - io2 volumes </b>.
+    </p>
+    <p><span class="point"> Throughput Optimized HDD volumes IPOS- 500 Throughput-500</span> -
+        ideal for large, sequential workloads - <b>Amazon EMR, ETL, data warehouses, and log processing </b>.
+
+    </p>
+    <p> <span class="point"> Cold HDD volumes (sc1)</span> - provide low-cost magnetic storage for infrequent access
+        to your data. </b>.</p>
 </body>
 
 </html>

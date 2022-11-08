@@ -48,20 +48,19 @@
     <p class="heading">Network ACLs</p>
     <p>
         <b> A network access control list (ACL) allows or denies specific inbound or outbound traffic at the subnet
-            level.</b>
+            level. A limit of 200 NACL per VPC</b>
 
 
         <br><b> Each subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a
             subnet with a
-            network ACL, the subnet is automatically associated with the default network ACL.</b>
+            network ACL, the subnet is automatically associated with the default network ACL.</b> <br>
 
         A network ACL with multiple subnets. However, a subnet with only one network ACL at a time, the previous
         association is removed.
-
+        <br>
         We evaluate the rules in order, starting with the lowest numbered rule, when deciding whether allow or deny
         traffic. If the traffic matches a rule, the rule is applied and we do not evaluate any
-        additional rules. We recommend that you start by creating rules in increments (for example, increments of 10 or
-        100) so that you can insert new rules later on, if needed.
+        additional rules. 
 
         We evaluate the network ACL rules when traffic enters and leaves the subnet, not as it is routed within a
         subnet.
@@ -69,9 +68,6 @@
         Network ACLs are stateless, which means that responses to allowed inbound traffic are subject to the rules for
         outbound traffic (and vice versa).
 
-       
-
-        Network ACL rule
     </p>
     <img src="../images/nacl.PNG" />
 
