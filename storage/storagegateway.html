@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Storage </title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <p class="main-heading"> AWS Storage Gateway</p>
+
+    <p>AWS Storage Gateway connects an on-premises software appliance with cloud-based storage to provide seamless
+        integration with data security features between your on-premises IT environment and the AWS storage
+        infrastructure. You can use the service to store data in the AWS Cloud for scalable and cost-effective storage
+        that helps maintain data security. </p>
+    <p class="heading"> Amazon S3 File Gateway</p>
+    <p> Supports a file interface into Amazon S3 and combines a service and a virtual software appliance. <b>You can
+            store and retrieve objects in Amazon S3 using industry-standard file protocols such as
+            Network File System (NFS) and
+            Server Message Block (SMB)</b>.
+
+        You can manage your S3 data using lifecycle policies, cross-region replication, and versioning. You can think of
+        a S3 File Gateway as a file system mount on Amazon S3.
+    </p>
+
+    <p>
+        A S3 File Gateway simplifies file storage in Amazon S3, integrates to existing applications through
+        industry-standard file system protocols, and provides a cost-effective alternative to on-premises storage. It
+        also provides low-latency access to data through transparent local caching. A S3 File Gateway manages data
+        transfer to and from AWS, buffers applications from network congestion, optimizes and streams data in parallel,
+        and manages bandwidth consumption. S3 File Gateway integrate with AWS services, for example with the following:
+
+        Common access management using AWS Identity and Access Management (IAM)
+
+        Encryption using AWS Key Management Service (AWS KMS)
+
+        Monitoring using Amazon CloudWatch (CloudWatch)
+
+        Audit using AWS CloudTrail (CloudTrail)
+
+        Operations using the AWS Management Console and AWS Command Line Interface (AWS CLI)
+
+        Billing and cost management
+
+
+
+
+    </p>
+    <p class="heading">Tape Gateway</p>
+    <p> <b> Cost-effectively and durably archive backup data in S3 Glacier Flexible Retrieval / Deep Archive</b>. A Tape
+        Gateway provides a virtual tape infrastructure that scales seamlessly with
+        your business needs and eliminates the operational burden of provisioning, scaling, and maintaining a physical
+        tape infrastructure.
+
+        You can deploy Storage Gateway either on-premises as a VM appliance running on VMware ESXi, KVM, or Microsoft
+        Hyper-V hypervisor, as a hardware appliance, or in AWS as an Amazon EC2 instance. You deploy your gateway on an
+        EC2 instance to provision iSCSI storage volumes in AWS. You can use gateways hosted on EC2 instances for
+        disaster recovery, data mirroring, and providing storage for applications hosted on Amazon EC2.</p>
+    <p class="heading">Volume Gateway</p>
+    <p> – A Volume Gateway provides cloud-backed storage volumes that you can mount as Internet Small
+        Computer System Interface (iSCSI) devices from your on-premises application servers.
+
+        You can deploy a Volume Gateway either on-premises as a VM appliance running on VMware ESXi, KVM, or Microsoft
+        Hyper-V hypervisor, as a hardware appliance, or in AWS as an Amazon EC2 instance.
+
+        The gateway supports the following volume configurations:
+
+        Cached volumes – You store your data in Amazon Simple Storage Service (Amazon S3) and retain a copy of
+        frequently accessed data subsets locally. Cached volumes offer a substantial cost savings on primary storage and
+        minimize the need to scale your storage on-premises. You also retain low-latency access to your frequently
+        accessed data.
+
+        Stored volumes – If you need low-latency access to your entire dataset, first configure your on-premises gateway
+        to store all your data locally. Then asynchronously back up point-in-time snapshots of this data to Amazon S3.
+        This configuration provides durable and inexpensive offsite backups that you can recover to your local data
+        center or Amazon Elastic Compute Cloud (Amazon EC2). For example, if you need replacement capacity for disaster
+        recovery, you can recover the backups to Amazon EC2.</p>
+
+</body>
+
+</html>
