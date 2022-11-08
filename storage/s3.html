@@ -47,22 +47,25 @@
     <p>S3 Storage Classes can be configured at the object level, and a single bucket can contain objects
         stored across S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, and S3 One Zone-IA. </p>
     <p class="point"> S3 Standard</p>
-    <p> Store data in a minimum of three Availability Zones (AZs)</p>
+    <p> Store data in a minimum of three Availability Zones (AZs) <br> No Minimum capacity charge per object <br> No Minimum storage duration charge <br>No Retrieval charge</p>
+    <p class="point"> S3 Intelligent-Tiering</p>
+    <p>Automatic cost savings for data with unknown or changing access patterns<br> No Minimum capacity charge per object <br> No Minimum storage duration charge <br>No Retrieval charge</p>
     <p class="point">S3 Standard-IA</p>
-    <p></p>
+    <p>30 days Minimum storage duration charge <br> 128KB Minimum capacity charge per object<br> Retrieval charge per GB</p>
     <p class="point"> S3 One Zone-IA</p>
     <p>S3 One Zone-IA is for data that is accessed less frequently, but requires rapid access when needed. S3 One
         Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA. S3 One Zone-IA is
         ideal for customers who want a lower-cost option for infrequently accessed and re-creatable data but do not
         require the availability and resilience of S3 Standard or S3 Standard-I. S3 One Zone-IA offers the same high
         durability, high throughput, and low latency of S3 Standard, with a low per GB storage price and per GB
-        retrieval fee.</p>
-    <p class="point"> S3 Intelligent-Tiering</p>
-    <p></p>
-    <p class="point"> S3 Glacier</p>
-    <p></p>
+        retrieval fee. <br> 90 days Minimum storage duration charge <br> 128KB Minimum capacity charge per object <br> Retrieval charge per GB</p>
+    
+    <p class="point"> S3 Glacier Instant retrieval</p>
+    <p>90 days Minimum storage duration charge  <br> 128KB Minimum capacity charge per object <br> Retrieval charge per GB</p>
+    <p class="point"> S3 Glacier Flexible retrieval</p>
+    <p>90 days Minimum storage duration charge<br> 48KB Minimum capacity charge per object <br> Retrieval charge per GB</p>
     <p class="point"> S3 Glacier Deep Archive</p>
-    <p></p>
+    <p>180 days Minimum storage duration charge <br> 48KB Minimum capacity charge per object <br> Retrieval charge per GB</p>
 
     <p class="heading">Lifecycle policy</p>
     <p> Automatically transition objects between storage classes without any application changes: <b> The minimum
@@ -138,7 +141,7 @@
     </p>
     <p>Like all other Object Lock settings, retention periods apply to individual object versions. Different versions of
         a single object can have different retention modes and periods.</p>
-        
+
     <p class="heading"> Legal holds</p>
     <p>
         With Object Lock you can also place a legal hold on an object version. Like a retention period, a legal hold
@@ -161,6 +164,7 @@
         To use Object Lock, you must enable it for a bucket. You can also optionally configure a default retention mode
         and period that applies to new objects that are placed in the bucket. For more information, see Configuring S3
         Object Lock using the console.</p>
+        <p><b>For S3 Standard storage, the pricing is $0.023 per GB per month. </b></p>
 
 </body>
 

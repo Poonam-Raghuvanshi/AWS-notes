@@ -33,13 +33,19 @@
             parallel. With enhanced fan-out developers can register stream consumers to use enhanced fan-out and receive
             their own 2MB/second pipe of read throughput per shard, and this throughput automatically scales with the
             number of shards in a stream.</b></p>
-    <p class="heading">Amazon Kinesis Data Firehose</p>
+    <p class="heading">Kinesis Data Firehose</p>
     <p> Easiest way to reliably <b>load streaming data into data lakes, data stores, and analytics tools</b>. It is a
         fully managed service that automatically scales to match the throughput of your data and requires no ongoing
         administration. It can also batch, compress, transform, and encrypt the data before loading it, minimizing the
         amount of storage used at the destination and increasing security. <b> Kinesis Data Firehose can only write to
-            S3,Redshift, Elasticsearch or Splunk</b>. </p>
+            S3,Redshift, Opensearch, API Gateway or Splunk</b>. </p>
     <img src="../images/kn.jpg" />
+    <p class="heading">Kinesis Data Analyticse</p>
+    <p>Easiest way to analyze streaming data in real-time. Kinesis Data Analytics
+        enables you to easily and quickly build queries and sophisticated streaming applications in three simple steps:
+        setup your streaming data sources, write your queries or streaming applications, and set up your destination for
+        processed data. Kinesis Data Analytics cannot directly ingest data from the source as it ingests data either
+        from Kinesis Data Streams or Kinesis Data Firehose</p>
 </body>
 
 </html>
