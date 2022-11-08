@@ -30,16 +30,50 @@
     </p>
     <p class="heading">Subnet</p>
     <p>
-        A subnet is a range of IP addresses in your VPC. <b>Each subnet must reside entirely within one Availability Zone and cannot span zones. </b>
-        <br/>
+        A subnet is a range of IP addresses in your VPC. <b>Each subnet must reside entirely within one Availability
+            Zone and cannot span zones. </b>
+        <br />
 
-        <span class="point">Public subnet:</span>   Traffic is routed to the public internet through an<b> internet gateway or an egress-only
-        internet gateway. </b>
-        <br/>
-        <span class="point">Private subnet:</span>  Access to the public internet requires a <b> NAT device</b>.
-        <br/>
-        <span class="point">VPN-only subnet:</span>  The subnet traffic is routed to a <b> Site-to-Site VPN connection through a virtual private
-        gateway</b>.</p>
+        <span class="point">Public subnet:</span> Traffic is routed to the public internet through an<b> internet
+            gateway or an egress-only
+            internet gateway. </b>
+        <br />
+        <span class="point">Private subnet:</span> Access to the public internet requires a <b> NAT device</b>.
+        <br />
+        <span class="point">VPN-only subnet:</span> The subnet traffic is routed to a <b> Site-to-Site VPN connection
+            through a virtual private
+            gateway</b>.
+    </p>
+    <img src="../images/vpc.PNG" />
+    <p class="heading">Network ACLs</p>
+    <p>
+        <b> A network access control list (ACL) allows or denies specific inbound or outbound traffic at the subnet
+            level.</b>
+
+
+        <br><b> Each subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a
+            subnet with a
+            network ACL, the subnet is automatically associated with the default network ACL.</b>
+
+        A network ACL with multiple subnets. However, a subnet with only one network ACL at a time, the previous
+        association is removed.
+
+        We evaluate the rules in order, starting with the lowest numbered rule, when deciding whether allow or deny
+        traffic. If the traffic matches a rule, the rule is applied and we do not evaluate any
+        additional rules. We recommend that you start by creating rules in increments (for example, increments of 10 or
+        100) so that you can insert new rules later on, if needed.
+
+        We evaluate the network ACL rules when traffic enters and leaves the subnet, not as it is routed within a
+        subnet.
+
+        Network ACLs are stateless, which means that responses to allowed inbound traffic are subject to the rules for
+        outbound traffic (and vice versa).
+
+       
+
+        Network ACL rule
+    </p>
+    <img src="../images/nacl.PNG" />
 
     <p class="heading"> VPC Reachability Analyzer </p>
     <p> Configuration analysis tool that enables you to perform connectivity testing between a source resource and a
