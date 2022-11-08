@@ -9,6 +9,38 @@
 
 <body>
     <p class="main-heading"> Virtual Private Cloud </p>
+    <p> <b>A VPC spans all of the Availability Zones in the Region.</b> After you create a VPC, you can add one or more
+        subnets in each Availability Zone.</p>
+
+    <p class="heading">VPC CIDR blocks</p>
+    <p>
+    <ul>
+        <li> The CIDR block must not overlap with any existing CIDR block that's associated with the VPC.</li>
+        <li>You cannot increase or decrease the size of an existing CIDR block.</li>
+        <li> VPC peering connection is active - add CIDR blocks to a VPC provided they do not overlap with a CIDR block
+            of the peer VPC.</li>
+        <li>VPC peering connection is pending-acceptance, the owner of the requester VPC cannot add any CIDR
+            block to the VPC, regardless of whether it overlaps with the CIDR block of the accepter VPC. Either the
+            owner of the accepter VPC must accept the peering connection, or the owner of the requester VPC must delete
+            the VPC peering connection request, add the CIDR block, and then request a new VPC peering connection.</li>
+        <li> VPC peering connection is pending-acceptance, the owner of the accepter VPC can add CIDR blocks to
+            the VPC. If a secondary CIDR block overlaps with a CIDR block of the requester VPC, the VPC peering
+            connection request fails and cannot be accepted.</li>
+    </ul>
+    </p>
+    <p class="heading">Subnet</p>
+    <p>
+        A subnet is a range of IP addresses in your VPC. <b>Each subnet must reside entirely within one Availability Zone and cannot span zones. </b>
+        <br/>
+
+        <span class="point">Public subnet:</span>   Traffic is routed to the public internet through an<b> internet gateway or an egress-only
+        internet gateway. </b>
+        <br/>
+        <span class="point">Private subnet:</span>  Access to the public internet requires a <b> NAT device</b>.
+        <br/>
+        <span class="point">VPN-only subnet:</span>  The subnet traffic is routed to a <b> Site-to-Site VPN connection through a virtual private
+        gateway</b>.</p>
+
     <p class="heading"> VPC Reachability Analyzer </p>
     <p> Configuration analysis tool that enables you to perform connectivity testing between a source resource and a
         destination resource in your virtual private clouds (VPCs). When the destination is reachable, Reachability
