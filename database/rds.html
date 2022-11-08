@@ -26,7 +26,9 @@
     <p class="heading">Read Replicas : Asynchronous Replication </p>
     <p>Improve your disaster recovery capabilities. <br>
         Scale read operations into an AWS Region closer to your users.<br>
-        Make it easier to migrate from a data center in one AWS Region to a data center in another AWS Region.</p>
+        Make it easier to migrate from a data center in one AWS Region to a data center in another AWS Region. <br>
+        Enhanced performance and durability </p>
+
     <p class="heading">Export snapshots to S3 </p>
     <p>Export RDS DB snapshot data to an Amazon S3 bucket. After the data is exported,
         Analyze the exported data using Amazon Athena or Amazon Redshift Spectrum.</p>
@@ -36,6 +38,10 @@
         <span class="point">Multi-AZ DB cluster deployment-</span> When the deployment has two standby DB
         instances. Has standby DB instances that provide failover support and can also serve read traffic.
     </p>
+    <p><b>Multi-AZ follows synchronous replication for RDS and asynchronous for Aurora and spans at least two Availability Zones within a single region.
+            Read replicas follow asynchronous replication and can be within an Availability Zone, Cross-AZ, or
+            Cross-Region</b></p>
+            <img src="../images/multi-az.PNG"/>
 </body>
 
 </html>

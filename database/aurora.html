@@ -118,10 +118,11 @@
 
     </p>
     <p class="heading">Additional Failover Control</p>
-    <p>
-        Each read replica is now associated with a priority tier (0-15). In the event of a failover, Amazon RDS
-        will promote the read replica that has the highest priority (the lowest numbered tier). If two or more replicas
-        have the same priority, RDS will promote the one that is the same size as the previous primary instance.</p>
+
+    <p>Each Read Replica is associated with a priority tier (0-15). In the event of a failover,
+        Amazon Aurora will promote the Read Replica that has the <b> highest priority (the lowest numbered tier)</b>. If
+        Same priority, then <b> replica that is largest in size</b>. If two or more Aurora Replicas share the same
+        priority and size, then Amazon Aurora promotes an arbitrary replica in the same promotion tier.</p>
 </body>
 
 </html>
