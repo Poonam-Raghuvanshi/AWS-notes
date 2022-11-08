@@ -115,8 +115,13 @@
         failover for Aurora MySQL, see MariaDB Connector/J failover support - case Amazon Aurora.
 
 
-        
+
     </p>
+    <p class="heading">Additional Failover Control</p>
+    <p>
+        Each read replica is now associated with a priority tier (0-15). In the event of a failover, Amazon RDS
+        will promote the read replica that has the highest priority (the lowest numbered tier). If two or more replicas
+        have the same priority, RDS will promote the one that is the same size as the previous primary instance.</p>
 </body>
 
 </html>
