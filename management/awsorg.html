@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Organizations </title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <p class="main-heading"> AWS Organizations</p>
+
+    <p>
+        Yyou can consolidate multiple AWS accounts into an organization that you create and centrally manage. You
+        can create member accounts and invite existing accounts to join your organization. You can organize those
+        accounts and manage them as a group. With AWS Account Management you can update the alternate contact
+        information for each of your AWS accounts.
+
+    </p>
+
+    <p class="heading"> Service control policies (SCPs)</p>
+    <p>
+        <b>Organization policy that you can use to manage permissions in your organization. </b>SCPs offer central
+        control over the maximum available permissions for all accounts in your
+        organization. SCPs help you to ensure your accounts stay within your organization’s access control guidelines.
+        SCPs are available only in an organization that has all features enabled. SCPs aren't available if your
+        organization has enabled only the consolidated billing features. For instructions on enabling SCPs, see Enabling
+        and disabling policy types.
+
+        SCPs alone are not sufficient to granting permissions to the accounts in your organization. No permissions are
+        granted by an SCP. An SCP defines a guardrail, or sets limits, on the actions that the account's administrator
+        can delegate to the IAM users and roles in the affected accounts. The administrator must still attach
+        identity-based or resource-based policies to IAM users or roles, or to the resources in your accounts to
+        actually grant permissions. The effective permissions are the logical intersection between what is allowed by
+        the SCP and what is allowed by the IAM and resource-based policies.
+
+
+    </p>
+    <p>SCPs affect only member accounts in the organization. They have no effect on users or roles in the management
+        account.</p>
+    <p>If a user or role has an IAM permission policy that grants access to an action that is either not allowed or
+        explicitly denied by the applicable SCPs, the user or role can't perform that action.</p>
+</body>
+
+</html>
