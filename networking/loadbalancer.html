@@ -34,15 +34,36 @@
             Application Load Balancer Configuration for Security Groups and Health Check Routes:</li>
 
     </ul>
+    <p>It provides content-based routing and support for container-based applications.</p>
+    <p class="heading">Application Load Balancer can route a request to a service based on the content of the request.</p>
+    <p> 
+        <p class="heading">  Host-based Routing: </p>
+        You can route a client request based on the Host field of the HTTP header allowing you to route to multiple
+        domains from the same load balancer.
+        <p class="heading">  Path-based Routing: </p>
+        You can route a client request based on the URL path of the HTTP header.
+        HTTP header-based routing:
+        You can route a client request based on the value of any standard or custom HTTP header.
+        HTTP method-based routing:
+        You can route a client request based on any standard or custom HTTP method.
+        Query string parameter-based routing:
+        You can route a client request based on the query string or query parameters.
+        Source IP address CIDR-based routing:
+        You can route a client request based on source IP address CIDR from where the request originates.
+        Path-based Routing Overview:
+        You can use path conditions to define rules that route requests based on the URL in the request (also known as
+        path-based routing).
+        The path pattern is applied only to the path of the URL, not to its query </p>
     <p class="main-heading">Network Load Balancer</p>
 
     <p>Functions at the fourth layer of the Open Systems Interconnection (OSI) model. It can
         handle millions of requests per second. After the load balancer receives a connection request, it selects a
         target from the target group for the default rule. It attempts to open a TCP connection to the selected target
         on the port specified in the listener configuration. </p>
-        <p class="heading">Request Routing and IP Addresses</p>
+    <p class="heading">Request Routing and IP Addresses</p>
 
-        <p>- If you specify targets using an instance ID, traffic is routed to instances using the primary private IP address
+    <p>- If you specify targets using an instance ID, traffic is routed to instances using the primary private IP
+        address
         specified in the primary network interface for the instance. The load balancer rewrites the destination IP
         address from the data packet before forwarding it to the target instance.
 
@@ -51,7 +72,7 @@
         Note that each network interface can have its security group. The load balancer rewrites the destination IP
         address before forwarding it to the target.</p>
     <img src="../images/security-g.jpg" />
-    <img src="../images/Health.PNG"/>
+    <img src="../images/Health.PNG" />
 
 
     </p>
