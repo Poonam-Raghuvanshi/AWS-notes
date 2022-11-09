@@ -12,6 +12,10 @@
 
     <p>AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited
         cloud storage. </p>
+    <p>Gateway also integrates natively with Amazon S3 and Amazon FSx for Windows File Server cloud storage, which makes
+        your data available for in-cloud processing, AWS Identity and Access Management (AWS IAM) for securing access
+        management to services and resources, AWS Key Management Service (AWS KMS) for encrypting data at rest in the
+        cloud, Amazon CloudWatch for monitoring, and AWS CloudTrail for logging account activity.</p>
     <p class="heading"> Amazon S3 File Gateway</p>
     <p> Supports a file interface into Amazon S3 and combines a service and a virtual software appliance. <b>You can
             store and retrieve objects in Amazon S3 using industry-standard file protocols such as
@@ -21,6 +25,7 @@
         You can manage your S3 data using lifecycle policies, cross-region replication, and versioning. You can think of
         a S3 File Gateway as a file system mount on Amazon S3.
     </p>
+    <p> Objects written through S3 File Gateway can be directly accessed in S3.</p>
 
     <p>
         A S3 File Gateway simplifies file storage in Amazon S3, integrates to existing applications through
@@ -45,6 +50,12 @@
 
 
     </p>
+    <p class="heading"> The Amazon FSx File Gateway</p>
+    <p>
+
+        The Amazon FSx File Gateway enables you to store and retrieve files in Amazon FSx for Windows File Server using
+        the SMB protocol. Files written through Amazon FSx File Gateway are directly accessible in Amazon FSx for
+        Windows File Server.</p>
     <p class="heading">Tape Gateway</p>
     <p> <b> Cost-effectively and durably archive backup data in S3 Glacier Flexible Retrieval / Deep Archive</b>. A Tape
         Gateway provides a virtual tape infrastructure that scales seamlessly with

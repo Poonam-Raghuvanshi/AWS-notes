@@ -168,6 +168,19 @@
     <p class="heading">Request throttling for the Amazon EC2 API - </p>
     <p> If you exceed an API throttling limit, you get the RequestLimitExceeded error code. You can use Amazon
         CloudWatch to monitor your Amazon EC2 API calls and to collect and track metrics around API throttling. </p>
+    <p><b>When the new AMI is copied from region A into region B, it automatically creates a snapshot in region B
+            because
+            AMIs are based on the underlying snapshots.</b></p>
+    <p class="heading">EC2 Instance store </p>
+    <p> <b>The data in an instance store persists only during the lifetime of its associated instance.</b>This storage
+        is located on disks that are physically attached to the host computer. Instance store is ideal for
+        the temporary block-level storage of information that changes frequently such as buffers, caches, scratch data,
+        and other temporary content, or for data that is
+        replicated across a fleet of instances, such as a load-balanced pool of web servers. <b> Instance store volumes
+            are included as part of the instance's usage cost. </b>
+        As Instance Store based volumes provide high random I/O performance at low cost (as the storage is part of the
+        instance's usage cost) and the resilient architecture can adjust for the loss of any instance,
+    </p>
 </body>
 
 </html>
