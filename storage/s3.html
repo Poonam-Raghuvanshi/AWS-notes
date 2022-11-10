@@ -37,6 +37,8 @@
     <p> Versioning is a means of keeping multiple variants of an object in the same bucket. You can use versioning to
         preserve, retrieve, and restore every version of every object stored in your Amazon S3 bucket.
         Versioning-enabled buckets enable you to recover objects from accidental deletion or overwrite.</p>
+    <p>Once you version-enable a bucket, it can never return to an unversioned state. Versioning can only be suspended
+        once it has been enabled.</p>
     <p class="heading">Enable MFA delete on the bucket</p>
     <p>To provide additional protection, multi-factor authentication (MFA) delete can
         be enabled. MFA delete requires secondary authentication to take place before objects can be permanently deleted
@@ -224,8 +226,9 @@
         achieve consistent small object latencies (and first-byte-out latencies for larger objects) of roughly 100–200
         milliseconds.
 
-       <br><b> Accelerate performance - Want higher transfer rates over a single HTTP connection or single-digit millisecond
-        latencies, use Amazon CloudFront or Amazon ElastiCache for caching with Amazon S3.</b>
+        <br><b> Accelerate performance - Want higher transfer rates over a single HTTP connection or single-digit
+            millisecond
+            latencies, use Amazon CloudFront or Amazon ElastiCache for caching with Amazon S3.</b>
 
         Additionally, if you want fast data transport over long distances between a client and an S3 bucket, use
         Configuring fast, secure file transfers using Amazon S3 Transfer Acceleration. Transfer Acceleration uses the
@@ -234,7 +237,7 @@
         Limits in the AWS Key Management Service Developer Guide for information about the request rates supported for
         your use case.
 
-        </p>
+    </p>
 
 </body>
 

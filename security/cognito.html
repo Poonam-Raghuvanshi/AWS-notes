@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Cognito </title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <p class="main-heading"> Amazon Cognito</p>
+    <p class="heading"> User Pools</p>
+    <p>
+        A user pool is a user directory in Amazon Cognito. You can leverage Amazon
+        Cognito User Pools to either provide built-in user management or integrate with external identity providers,
+        such as Facebook, Twitter, Google+, and Amazon. Whether your users sign-in directly or through a third party,
+        all members of the user pool have a directory profile that you can access through a Software Development Kit
+        (SDK).<br>
+        User pools provide: 1. Sign-up and sign-in services. 2. A built-in, customizable web UI to sign in users. 3.
+        Social sign-in with Facebook, Google, Login with Amazon, and Sign in with Apple, as well as sign-in with SAML
+        identity providers from your user pool. 4. User directory management and user profiles. 5. Security features
+        such as multi-factor authentication (MFA), checks for compromised credentials, account takeover protection, and
+        phone and email verification. 6. Customized workflows and user migration through AWS Lambda triggers.
+        After creating an Amazon Cognito user pool, in API Gateway, you must then create a COGNITO_USER_POOLS authorizer
+        that uses the user pool.
+
+    </p>
+    <p class="heading"> Identity pools</p>
+    <p>Provide AWS credentials to grant your users access to other AWS services. To enable users in your
+        user pool to access AWS resources, you can configure an identity pool to exchange user pool tokens for AWS
+        credentials.</p>
+</body>
+
+</html>

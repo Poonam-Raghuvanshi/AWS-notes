@@ -14,10 +14,18 @@
         any scale. Amazon API Gateway offers two options to create RESTful APIs, HTTP APIs and REST APIs, as well as an
         option to create WebSocket APIs.
     </p>
-    <p>Amazon API Gateway <b> throttles requests to your API using the token bucket algorithm </b>, where a token counts for a
+    <p>Amazon API Gateway <b> throttles requests to your API using the token bucket algorithm </b>, where a token counts
+        for a
         request. Specifically, API Gateway sets a limit on a steady-state rate and a burst of request submissions
         against all APIs in your account. In the token bucket algorithm, the burst is the maximum bucket size.</p>
-
+    <p>API Gateway creates RESTful APIs that:
+        Are HTTP-based.
+        Enable stateless client-server communication.
+        Implement standard HTTP methods such as GET, POST, PUT, PATCH, and DELETE.
+        API Gateway creates WebSocket APIs that:
+        Adhere to the WebSocket protocol, which enables stateful, full-duplex communication between client and server.
+        Route incoming messages based on message content.
+    </p>
 </body>
 
 </html>

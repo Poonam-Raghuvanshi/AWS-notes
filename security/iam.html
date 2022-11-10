@@ -111,6 +111,9 @@
         identity-based policies grant to the session. Session policies limit permissions for a created session, but do
         not grant permissions.
     </p>
+    <p>s3:ListBucket is applied to buckets, so the ARN is in the form "Resource":"arn:aws:s3:::mybucket", without a
+        trailing / s3:GetObject is applied to objects within the bucket, so the ARN is in the form
+        "Resource":"arn:aws:s3:::mybucket/*", with a trailing /* to indicate all objects within the bucket mybucket</p>
 
 </body>
 

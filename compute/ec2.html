@@ -181,6 +181,20 @@
         As Instance Store based volumes provide high random I/O performance at low cost (as the storage is part of the
         instance's usage cost) and the resilient architecture can adjust for the loss of any instance,
     </p>
+    <p class="heading">Default termination policy </p>
+    <p>
+    <ul>
+        <li>
+        
+            Determine whether any of the instances use the oldest launch template, unless there are instances that use a
+            launch configuration. Amazon EC2 Auto Scaling terminates instances that use a launch configuration before it
+            terminates instances that use a launch template.</li>
+
+        <li> After applying the preceding criteria, if there are multiple unprotected instances to terminate, determine
+            which instances are closest to the next billing hour. If there are multiple unprotected instances closest to
+            the next billing hour, terminate one of these instances at random. </li>
+    </ul>
+    </p>
 </body>
 
 </html>
