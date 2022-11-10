@@ -148,7 +148,7 @@
     <p> <span class="point"> Spot Instances</span> - Unused EC2 instance that is available for less than the On-Demand
         price. Because Spot Instances enable you to request unused EC2 instances at steep discounts, you can lower your
         Amazon EC2 costs significantly. <b>Spot Instances are a cost-effective choice if you can be flexible about when
-            your applications run and if your applications can be interrupted </b>.</p>
+            your applications run and if your applications can be interrupted </b>. Spot Instances with a defined duration (also known as Spot blocks) are designed not to be interrupted and will run continuously for the duration you select. This makes them ideal for jobs that take a finite time to complete, such as batch processing, encoding and rendering, modeling and analysis, and continuous integration.</p>
     <p class="heading"> Launch template and launch configuration</p>
     <p>Similar but Launch template specifies instance <b> configuration information such as the ID of the Amazon Machine
             Image (AMI), the instance type, a key pair, security groups, and the other parameters that you use to launch
@@ -185,7 +185,7 @@
     <p>
     <ul>
         <li>
-        
+
             Determine whether any of the instances use the oldest launch template, unless there are instances that use a
             launch configuration. Amazon EC2 Auto Scaling terminates instances that use a launch configuration before it
             terminates instances that use a launch template.</li>
@@ -195,6 +195,10 @@
             the next billing hour, terminate one of these instances at random. </li>
     </ul>
     </p>
+    <p class="heading">EC2 Instance Hibernate </p>
+    <p>When you hibernate an instance, AWS signals the operating system to perform hibernation (suspend-to-disk).
+        Hibernation saves the contents from the instance memory (RAM) to your Amazon EBS root volume. AWS then persists
+        the instance's Amazon EBS root volume and any attached Amazon EBS data volumes.</p>
 </body>
 
 </html>

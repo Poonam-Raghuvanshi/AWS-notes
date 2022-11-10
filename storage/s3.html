@@ -9,7 +9,7 @@
 
 <body>
     <p class="main-heading">Amazon S3</p>
-
+    <p class="heading">Oject based storage</p>
     <p>
         You can use Amazon S3 to host a static website. On a static website, individual web pages include static
         content. They might also contain client-side scripts. To host a static website on Amazon S3, you configure an
@@ -238,7 +238,43 @@
         your use case.
 
     </p>
-
+    <p class="heading">x-amz-server-side-encryption header set </p>
+    <b>the bucket policy to deny if the PutObject does not have an x-amz-server-side-encryption header set - Amazon S3
+        encrypts your data at the object level as it writes to disks in AWS data centers, and decrypts it for you when
+        you access it. You can encrypt objects by using client-side encryption or server-side encryption. Client-side
+        encryption occurs when an object is encrypted before you upload it to S3, and the keys are not managed by AWS.
+        With server-side encryption, Amazon manages the keys in one of three ways:
+        1. Server-side encryption with customer-provided encryption keys (SSE-C).
+        2. SSE-S3.
+        3. SSE-KMS.
+        Server-side encryption is about data encryption at rest—that is, S3 encrypts your data at the object level as it
+        writes it to disks in its data centers and decrypts it for you when you access it. As long as you authenticate
+        your request and you have access permissions, there is no difference in the way you access encrypted or
+        unencrypted objects.
+        To encrypt an object at the time of upload, you need to add a header called x-amz-server-side-encryption to the
+        request to tell S3 to encrypt the object using SSE-C, SSE-S3, or SSE-KMS.
+        In order to enforce object encryption, create an S3 bucket policy that denies any S3 Put request that does not
+        include the x-amz-server-side-encryption header. There are two possible values for the
+        x-amz-server-side-encryption header: AES256, which tells S3 to use S3-managed keys, and aws:kms, which tells S3
+        to use AWS KMS–managed keys.
+    </b>
+    <p class="heading">restrict access to content that you serve from Amazon S3 buckets</p>
+    <p>To restrict access to content that you serve from Amazon S3 buckets, you need to follow the following steps:
+        1. Create a special CloudFront user called an origin access identity (OAI) and associate it with your
+        distribution.
+        2. Configure your S3 bucket permissions so that CloudFront can use the OAI to access the files in your bucket
+        and serve them to your users. Make sure that users can’t use a direct URL to the S3 bucket to access a file
+        there.
+    </p>
+    <p class="heading"> fetch a byte-range from an object</p>
+    <p>Using the Range HTTP header in a GET Object request, you can fetch a byte-range from an object, transferring only
+        the specified portion. You can use concurrent connections to Amazon S3 to fetch different byte ranges from
+        within the same object. This helps you achieve higher aggregate throughput versus a single whole-object request.
+        Fetching smaller ranges of a large object also allows your application to improve retry times when requests are
+        interrupted.
+        A byte-range request is a perfect way to get the beginning of a file and ensuring we remain efficient during our
+        scan of our S3 bucket.
+    </p>
 </body>
 
 </html>

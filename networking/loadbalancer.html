@@ -35,25 +35,26 @@
 
     </ul>
     <p>It provides content-based routing and support for container-based applications.</p>
-    <p class="heading">Application Load Balancer can route a request to a service based on the content of the request.</p>
-    <p> 
-        <p class="heading">  Host-based Routing: </p>
-        You can route a client request based on the Host field of the HTTP header allowing you to route to multiple
-        domains from the same load balancer.
-        <p class="heading">  Path-based Routing: </p>
-        You can route a client request based on the URL path of the HTTP header.
-        HTTP header-based routing:
-        You can route a client request based on the value of any standard or custom HTTP header.
-        HTTP method-based routing:
-        You can route a client request based on any standard or custom HTTP method.
-        Query string parameter-based routing:
-        You can route a client request based on the query string or query parameters.
-        Source IP address CIDR-based routing:
-        You can route a client request based on source IP address CIDR from where the request originates.
-        Path-based Routing Overview:
-        You can use path conditions to define rules that route requests based on the URL in the request (also known as
-        path-based routing).
-        The path pattern is applied only to the path of the URL, not to its query </p>
+    <p class="heading">Application Load Balancer can route a request to a service based on the content of the request.
+    </p>
+    <p>
+    <p class="heading"> Host-based Routing: </p>
+    You can route a client request based on the Host field of the HTTP header allowing you to route to multiple
+    domains from the same load balancer.
+    <p class="heading"> Path-based Routing: </p>
+    You can route a client request based on the URL path of the HTTP header.
+    HTTP header-based routing:
+    You can route a client request based on the value of any standard or custom HTTP header.
+    HTTP method-based routing:
+    You can route a client request based on any standard or custom HTTP method.
+    Query string parameter-based routing:
+    You can route a client request based on the query string or query parameters.
+    Source IP address CIDR-based routing:
+    You can route a client request based on source IP address CIDR from where the request originates.
+    Path-based Routing Overview:
+    You can use path conditions to define rules that route requests based on the URL in the request (also known as
+    path-based routing).
+    The path pattern is applied only to the path of the URL, not to its query </p>
     <p class="main-heading">Network Load Balancer</p>
 
     <p>Functions at the fourth layer of the Open Systems Interconnection (OSI) model. It can
@@ -75,6 +76,21 @@
     <img src="../images/Health.PNG" />
 
 
+    </p>
+    <p>
+        Application Load Balancer + dynamic port mapping
+        Application Load Balancer can automatically distribute incoming application traffic across multiple targets,
+        such as Amazon EC2 instances, containers, IP addresses, and Lambda functions. It can handle the varying load of
+        your application traffic in a single Availability Zone or across multiple Availability Zones. Dynamic port
+        mapping with an Application Load Balancer makes it easier to run multiple tasks on the same Amazon ECS service
+        on an Amazon ECS cluster.
+    </p>
+
+    <p>
+        Network Load Balancer + dynamic port mapping - Network Load Balancer is best suited for use-cases involving low
+        latency and high throughput workloads that involve scaling to millions of requests per second. Network Load
+        Balancer operates at the connection level (Layer 4), routing connections to targets - Amazon EC2 instances,
+        microservices, and containers – within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data.
     </p>
 </body>
 

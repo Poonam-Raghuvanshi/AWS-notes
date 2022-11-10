@@ -115,6 +115,18 @@
         trailing / s3:GetObject is applied to objects within the bucket, so the ARN is in the form
         "Resource":"arn:aws:s3:::mybucket/*", with a trailing /* to indicate all objects within the bucket mybucket</p>
 
+    <p class="heading"> IAM permission boundary </p>
+
+    <p>AWS supports permissions boundaries for IAM entities (users or roles). A permissions boundary is an advanced
+        feature for using a managed policy to set the maximum permissions that an identity-based policy can grant to an
+        IAM entity. An entity's permissions boundary allows it to perform only the actions that are allowed by both its
+        identity-based policies and its permissions boundaries. </p>
+    <p>If you are going to use the role with Amazon EC2 or another AWS service that uses Amazon EC2, you must store the
+        role in an instance profile. An instance profile is a container for a role that can be attached to an Amazon EC2
+        instance when launched. An instance profile can contain only one role, and that limit cannot be increased. If
+        you create the role using the AWS Management Console, the instance profile is created for you with the same name
+        as the role.</p>
+
 </body>
 
 </html>
