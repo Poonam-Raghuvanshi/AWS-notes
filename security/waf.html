@@ -22,6 +22,18 @@
         access control list (web ACL). Geographic (Geo) Match Conditions in AWS WAF allows you to use AWS WAF to
         restrict application access based on the geographic location of your viewers. With geo match conditions you can
         choose the countries from which AWS WAF should allow access. </p>
+    <p>When you use AWS WAF with CloudFront, you can protect your applications running on any HTTP webserver, whether
+        it's a webserver that's running in Amazon Elastic Compute Cloud (Amazon EC2) or a web server that you manage
+        privately. You can also configure CloudFront to require HTTPS between CloudFront and your own webserver, as well
+        as between viewers and CloudFront.
+        AWS WAF is tightly integrated with Amazon CloudFront and the Application Load Balancer (ALB), services that AWS
+        customers commonly use to deliver content for their websites and applications. When you use AWS WAF on Amazon
+        CloudFront, your rules run in all AWS Edge Locations, located around the world close to your end-users. This
+        means security doesn’t come at the expense of performance. Blocked requests are stopped before they reach your
+        web servers. When you use AWS WAF on Application Load Balancer, your rules run in the region and can be used to
+        protect internet-facing as well as internal load balancers.
+    </p>
 </body>
+
 
 </html>

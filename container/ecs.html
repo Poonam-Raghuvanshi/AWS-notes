@@ -18,6 +18,21 @@
                 type is charged based on vCPU and memory resources that the containerized application requests</b>
         </li>
     </ul>
+    <p>Amazon ECS with EC2 launch type supports the following networking mode,
+        1. Host Mode: This is a basic mode in which the networking of the container is directly
+        tied to the underlying host.
+        2. Bridge Mode: In this mode, a network bridge is created between host and container
+        networking. This bridge mode allows the remapping of ports between host and
+        container ports.
+        3. None mode: In this mode, networking is not attached to the container. With this mode,
+        containers do not have external connectivity.
+        4. AWSVPC Mode: In this mode, each task is allocated a separate ENI (Elastic Network
+        Interface) Each Task will receive a separate IP address and a separate security group
+    </p>
+    <p>Amazon ECS can be deployed in AWS Outposts to provide the least latency from the on-premises
+        location. With AWS Outposts, the EC2 launch type is only supported with Amazon ECS. EC2 launch type
+        is best suited when there is a requirement of consistent high CPU and memory for container-based
+        applications.</p>
 </body>
 
 </html>

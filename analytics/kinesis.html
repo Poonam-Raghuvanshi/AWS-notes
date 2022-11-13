@@ -72,6 +72,15 @@
         provide long-term storage of data unlike a database or a data warehouse. So, this option is not right for the
         current use case
     </p>
+    <p>When a Kinesis data stream is configured as the source of a Firehose delivery stream, Firehose’s PutRecord and
+        PutRecordBatch operations are disabled and Kinesis Agent cannot write to Firehose delivery stream directly. Data
+        needs to be added to the Kinesis data stream through the Kinesis Data Streams PutRecord and PutRecords
+        operations instead.</p>
+    <p>If the IAM role that you create for the Lambda function is in the same AWS account as the bucket, then you don't
+        need to grant Amazon S3 permissions on both the IAM role and the bucket policy. Instead, you can grant the
+        permissions on the IAM role and then verify that the bucket policy doesn't explicitly deny access to the Lambda
+        function role. If the IAM role and the bucket are in different accounts, then you need to grant Amazon S3
+        permissions on both the IAM role and the bucket policy. </p>
 </body>
 
 </html>

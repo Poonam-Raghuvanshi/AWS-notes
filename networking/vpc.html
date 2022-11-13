@@ -248,6 +248,9 @@
     <p>You should create public NAT gateway in the public subnet of each AZ and must associate an elastic IP address
         with the NAT gateway at creation. Then, you can route traffic from the NAT gateway to the internet gateway for
         the VPC.</p>
+    <p>DNS hostnames and DNS resolution are required settings for private hosted zones. DNS queries for private hosted
+        zones can be resolved by the Amazon-provided VPC DNS server only. As a result, these options must be enabled for
+        your private hosted zone to work.f</p>
 </body>
 
 </html>

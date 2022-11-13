@@ -68,6 +68,21 @@
         replace them. Amazon EC2 Auto Scaling stops replacing instances that are marked as unhealthy. Instances that
         fail EC2 or Elastic Load Balancing health checks are still marked as unhealthy. </p>
     <img src="../images/ALB.PNG" />
+    <p>ASG with min=1, max=1, desired=1, across two AZ, so that if an instance goes down, it is automatically recreated
+        in another AZ. </p>
+    <p>Auto Scaling creates a new scaling activity for terminating the unhealthy instance and then terminates it. Later,
+        another scaling activity launches a new instance to replace the terminated instance.</p>
+    <p>When rebalancing, Amazon EC2 Auto Scaling launches new instances before terminating the old ones, so that
+        rebalancing does not compromise the performance or availability of your application. </p>
+    <p>Amazon EC2 Auto Scaling doesn't terminate an instance that came into service based on EC2 status checks and ELB
+        health checks until the health check grace period expires.</p>
+    <p>Amazon EC2 Auto Scaling does not immediately terminate instances with an Impaired status. Instead, Amazon EC2
+        Auto Scaling waits a few minutes for the instance to recover. Amazon EC2 Auto Scaling might also delay or not
+        terminate instances that fail to report data for status checks. This usually happens when there is insufficient
+        data for the status check metrics in Amazon CloudWatch.</p>
+    <p>When a custom health check determines that an instance is unhealthy, the check manually triggers
+        SetInstanceHealth and then sets the instance's state to Unhealthy. Amazon EC2 Auto Scaling then terminates the
+        unhealthy instance.</p>
 </body>
 
 </html>

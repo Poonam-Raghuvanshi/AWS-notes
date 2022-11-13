@@ -14,6 +14,8 @@
         capacity while automating time-consuming administration tasks such as hardware provisioning, database setup,
         patching, and backups.
     </p>
+    <p>With storage autoscaling enabled, when Amazon RDS detects that you are running out of free database space it
+        automatically scales up your storage. </p>
     <p class="heading">Configure RDS to use SSL for data in transit </p>
     <p>
         <b> Amazon RDS creates an SSL certificate and installs the certificate on the DB instance when the instance is
@@ -49,6 +51,8 @@
         applications that require privileged access. RDS Custom for Oracle facilitates these functionalities with
         minimum infrastructure maintenance effort.</p>
     <img src="../images/comp.PNG" />
+    <p>Any database engine level upgrade for an RDS DB instance with Multi-AZ deployment triggers both the primary and
+        standby DB instances to be upgraded at the same time. This causes downtime until the upgrade is complete</p>
 </body>
 
 </html>

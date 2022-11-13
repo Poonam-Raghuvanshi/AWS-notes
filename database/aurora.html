@@ -123,6 +123,11 @@
         Amazon Aurora will promote the Read Replica that has the <b> highest priority (the lowest numbered tier)</b>. If
         Same priority, then <b> replica that is largest in size</b>. If two or more Aurora Replicas share the same
         priority and size, then Amazon Aurora promotes an arbitrary replica in the same promotion tier.</p>
+    <p>Aurora Replicas have two main purposes. You can issue queries to them to scale the read operations for your
+        application. You typically do so by connecting to the reader endpoint of the cluster. That way, Aurora can
+        spread the load for read-only connections across as many Aurora Replicas as you have in the cluster. Aurora
+        Replicas also help to increase availability. If the writer instance in a cluster becomes unavailable, Aurora
+        automatically promotes one of the reader instances to take its place as the new writer. Aurora DB cluster can contain upto 15 Aurora replicas</p>
 </body>
 
 </html>

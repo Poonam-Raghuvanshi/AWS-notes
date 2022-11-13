@@ -9,6 +9,7 @@
 
 <body>
     <p class="main-heading">Application Load Balancer</p>
+    <p>ELB cannot distribute incoming traffic for targets deployed in different regions.</p>
     <p>
 
     <ul>
@@ -61,6 +62,17 @@
         handle millions of requests per second. After the load balancer receives a connection request, it selects a
         target from the target group for the default rule. It attempts to open a TCP connection to the selected target
         on the port specified in the listener configuration. </p>
+    <p>Network Load Balancer is best suited for use-cases involving low latency and high throughput workloads that
+        involve scaling to millions of requests per second. Network Load Balancer operates at the connection level
+        (Layer 4), routing connections to targets - Amazon EC2 instances, microservices, and containers – within Amazon
+        Virtual Private Cloud (Amazon VPC) based on IP protocol data.
+        Including bastion hosts in your VPC environment enables you to securely connect to your Linux instances without
+        exposing your environment to the Internet. After you set up your bastion hosts, you can access the other
+        instances in your VPC through Secure Shell (SSH) connections on Linux. Bastion hosts are also configured with
+        security groups to provide fine-grained ingress control.
+        You need to remember that Bastion Hosts are using the SSH protocol, which is a TCP based protocol on port 22.
+        They must be publicly accessible.
+    </p>
     <p class="heading">Request Routing and IP Addresses</p>
 
     <p>- If you specify targets using an instance ID, traffic is routed to instances using the primary private IP

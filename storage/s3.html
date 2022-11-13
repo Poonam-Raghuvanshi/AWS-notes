@@ -68,7 +68,9 @@
 
     <p class="point"> S3 Glacier Instant retrieval</p>
     <p>90 days Minimum storage duration charge <br> 128KB Minimum capacity charge per object <br> Retrieval charge per
-        GB</p>
+        GB Amazon S3 Glacier is a secure, durable, and low-cost storage class for data archiving. Amazon S3 Glacier
+        automatically encrypts data at rest using Advanced Encryption Standard (AES) 256-bit symmetric keys and supports
+        secure transfer of your data over Secure Sockets Layer (SSL).</p>
     <p class="point"> S3 Glacier Flexible retrieval</p>
     <p>90 days Minimum storage duration charge<br> 48KB Minimum capacity charge per object <br> Retrieval charge per GB
     </p>
@@ -275,6 +277,40 @@
         A byte-range request is a perfect way to get the beginning of a file and ensuring we remain efficient during our
         scan of our S3 bucket.
     </p>
+    <p class="heading"> The Amazon S3 event notification</p>
+    <p> Feature enables you to receive notifications when certain events happen in your
+        bucket. To enable notifications, you must first add a notification configuration that identifies the events you
+        want Amazon S3 to publish and the destinations where you want Amazon S3 to send the notifications.
+        Amazon S3 supports the following destinations where it can publish events:
+        Amazon Simple Notification Service (Amazon SNS) topic
+        Amazon Simple Queue Service (Amazon SQS) queue
+        AWS Lambda
+    </p>
+    <p class="heading"> Amazon S3 inventory </p>
+    <p> Amazon S3 inventory helps you manage your storage by creating lists of the objects in an S3 bucket on a defined
+        schedule.
+    </p>
+    <p>By default, an S3 object is owned by the AWS account that uploaded it. </p>
+    <p>While using Amazon CloudFront with Amazon S3 as an origin, there are two ways to control access to
+        the S3 bucket via Amazon CloudFront,
+        1. OAI (Origin Access Identity): This is a legacy method that does not support AWS KMS
+        as encryption or dynamic requests to the Amazon S3 and Opt-in regions.
+        2. OAC (Origin Access Control): This is a new method and supports the following three
+        points such as AWS KMS for encryption, dynamic requests to the Amazon S3 and OptA.
+        Use a Principal element in the policy to match service as CloudFront distribution
+        that contains the S3 origin
+
+    </p>
+    <p>Amazon S3 Transfer Acceleration helps especially in this scenario along with
+        multipart upload.
+        X1 and X1e instances are memory-optimized instances designed for running large-scale and inmemory applications
+        in the AWS Cloud.
+        Generally, it is a recommended practice to benefit from byte-range fetches and appropriate
+        distributing key names. Another complex practice to avoid expensive LIST operations relies on a
+        search framework to keep track of all objects in an S3 bucket.
+        Lambda triggers are used to populate DynamoDB tables with object names and metadata when
+        those objects are put into Amazon S3 then OpenSearch Service is used to search for specific assets,
+        related metadata, and data classifications.</p>
 </body>
 
 </html>
