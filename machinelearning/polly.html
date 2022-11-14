@@ -9,12 +9,63 @@
 
 <body>
     <p class="main-heading"> Polly</p>
-   
+
     <p>
         Amazon Polly is a service that turns text into lifelike
         speech, allowing you to create applications that talk and build entirely new categories
         of speech-enabled products. So, Krish can easily use Amazon Polly to build the required
         feature in the platform without any hassle.
+    </p>
+    <p>
+    <div>
+        <p><strong>Correct Answer:</strong> <strong>A</strong></p>
+
+        <p>Amazon Elastic Container Service (ECS) Anywhere is a feature of Amazon ECS that enables you to run and manage
+            container workloads on customer-managed infrastructure efficiently.<br>
+            ECS Anywhere builds upon the ease and simplicity of Amazon ECS to provide a consistent tooling and API
+            experience across your container-based applications.</p>
+
+        <ul>
+            <li><strong>Option A is CORRECT </strong>because you need AWS Systems Manager to supply a secret activation
+                code that allows the agent to register itself with AWS Systems Manager as a managed instance, which is
+                necessary to run your instances on ECS Anywhere.</li>
+        </ul>
+
+        <p>Also, it is necessary for the Amazon ECS agent to have connectivity with your ECS Cluster.<br>
+            Docker is used if you want to run container workloads on-prem.<br>
+            And you can apply the following command on your Linux instance to register to the Amazon ECS:</p>
+
+        <p>curl --proto "https" -o "/tmp/ecs-anywhere-install.sh"
+            "https://amazon-ecs-agent.s3.amazonaws.com/ecs-anywhere-install-latest.sh" &amp;&amp; bash
+            /tmp/ecs-anywhere-install.sh --region "YourRegion" --cluster "Cluster-name" --activation-id
+            "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxx" --activation-code "xxxxxxxxx"</p>
+
+        <ul>
+            <li><strong>Option B is incorrect </strong>because Amazon ECS agents must also be included, if not, the
+                servers can’t be registered on the ECS cluster.</li>
+            <li><strong>Option C is incorrect </strong>because Amazon Systems Manager Agent must also be included, if
+                not, the servers will not be registered as managed instances and will not complete the registration of
+                the servers into the ECS Cluster.</li>
+            <li><strong>Option D is incorrect </strong>as we are missing the Amazon Systems Manager Agent. Amazon
+                CloudWatch&nbsp; agent would provide the possibility to forward logs to Amazon CloudWatch , but the
+                servers will not be able to register.</li>
+        </ul>
+
+        <p><strong>References:</strong></p>
+
+        <ul>
+            <li><a href="https://aws.amazon.com/ecs/anywhere/" target="_blank">https://aws.amazon.com/ecs/anywhere/</a>
+            </li>
+            <li><a href="https://aws.amazon.com/blogs/aws/getting-started-with-amazon-ecs-anywhere-now-generally-available/"
+                    target="_blank">https://aws.amazon.com/blogs/aws/getting-started-with-amazon-ecs-anywhere-now-generally-available/</a>
+            </li>
+            <li><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-anywhere.html"
+                    target="_blank">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-anywhere.html</a>
+            </li>
+            <li><a href="https://aws.amazon.com/blogs/containers/introducing-amazon-ecs-anywhere/"
+                    target="_blank">https://aws.amazon.com/blogs/containers/introducing-amazon-ecs-anywhere/</a></li>
+        </ul>
+    </div>
     </p>
 </body>
 

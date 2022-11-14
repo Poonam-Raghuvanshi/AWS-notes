@@ -26,6 +26,39 @@
         the reboot and recover actions to automatically reboot those instances or recover them onto new hardware if a
         system impairment occurs. <b> The reboot alarm action is recommended for Instance Health Check
             failures (as opposed to the recover alarm action, which is suited for System Health Check failures)</b>.</p>
+    <div class="explanation-block show-answer">
+        <hr>
+        <h6>Explanation:</h6>
+        <div>
+            <p><strong>Correct Answer: B</strong></p>
+
+            <ul>
+                <li><strong>Option A is incorrect.</strong> CloudWatch access logging captures which resource accessed
+                    an API and the method used to access the API. It is not used for execution traces, such as capturing
+                    request and response payloads.</li>
+                <li><strong>Option B is correct. </strong>CloudWatch execution logging allows you to capture user
+                    request and response payloads as well as error traces.</li>
+                <li><strong>Option C is incorrect.</strong> CloudTrail captures actions by users, roles, and AWS
+                    services. CloudTrail records all AWS account activity. CloudTrail does not capture error traces.
+                </li>
+                <li><strong>Option D is incorrect. </strong>CloudTrail does not have a feature called execution logging.
+                </li>
+            </ul>
+
+            <p><strong>References:</strong></p>
+
+            <ul>
+                <li>Please see the Amazon API Gateway developer guide titled Setting up CloudWatch logging for a REST
+                    API in API Gateway&nbsp;(<a
+                        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html"
+                        target="_blank">https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html</a>),
+                    and the AWS CloudTrail user guide titled How CloudTrail works&nbsp;(<a
+                        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html"
+                        target="_blank">https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html</a>)&nbsp;
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>

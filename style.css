@@ -59,3 +59,7 @@ aside {
   width: 25%;
   background-color: rgb(202, 206, 230);
 }
+a{
+  text-decoration: none !important;
+  color: #662054 !important;
+}

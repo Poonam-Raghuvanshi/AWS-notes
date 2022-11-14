@@ -36,6 +36,12 @@
         APIs that simplify application development by providing a single endpoint to securely
         query or update data from multiple data sources and leverage GraphQL to implement
         engaging real-time application experiences.</p>
+        <ul>
+            <li><strong>Option A is CORRECT </strong>because AWS Datasync can’t open a file if this file is locked. AWS DataSync will skip the file and log the error.</li>
+            <li><strong>Option B is CORRECT&nbsp; </strong>because DataSync detects the data inconsistency during the VERIFYING phase if a file is modified during the transfer. In this phase, DataSync detects whether the file on the source differs from the file on the destination.</li>
+            <li><strong>Option C is incorrect </strong>because modifying the ownership doesn’t affect the file being transferred or not.</li>
+            <li><strong>Option D is incorrect </strong>because changing the permissions after the file was transferred doesn’t affect the copy phase.</li>
+        </ul>
 </body>
 
 </html>
