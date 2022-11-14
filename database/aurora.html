@@ -136,11 +136,82 @@
     <p>. Parallel Query is a feature supported currently by Amazon Aurora
         for MySQL. It makes it possible to perform analytical queries over the data stored in your
         transactional database without copying the data to a separate system for analytics.</p>
-    
+
     <p> because Amazon Aurora Serverless is an on-demand, auto-scaling configuration for . It automatically starts up,
         shuts down, and scales capacity up or down based on your application's needs. You can run your database on AWS
         without managing database capacity.</p>
-        <p> </p>
+    <p> </p>
+    <div class="explanation-block show-answer">
+        <hr>
+        <h6>Explanation:</h6>
+        <div>
+            <p><strong>Correct Answer: B</strong></p>
+
+            <p>Amazon Aurora Database reliability can be increased by adding Aurora Replicas to the primary DB instance
+                and placing them in different Availability zones. Each of the DB clusters can have a primary DB instance
+                and up to 15 Aurora Replicas. In case of primary DB instance failure, Aurora automatically fails over to
+                replicas. Amazon Aurora also uses the following automatic features to enhance reliability,</p>
+
+            <ol>
+                <li>Storage auto-repair: Aurora maintains multiple copies of the data in three different Availability
+                    zones. This helps in avoiding data loss post disk failure. If any segment of the disk fails, Aurora
+                    automatically recovers data on the segment by using data stored in other cluster volumes. This
+                    reduces additional work to perform point-in-time restoration post disk failure.</li>
+                <li>Survivable page cache: Manage page cache in a separate process than the database. In the event of
+                    database failure, the page cache is stored in the memory. Post restarting the database, applications
+                    continue to read data from the page cache providing performance gain.</li>
+                <li>Crash recovery: Crash recovery can be used for faster recovery post any crash in the database. With
+                    the crash recovery feature, Amazon Aurora performs recovery asynchronously on parallel threads
+                    enabling applications to read data from the database without binary logs.</li>
+            </ol>
+
+            <ul>
+                <li><strong>Option A is incorrect.</strong> Aurora Replicas should be created in different Availability
+                    zones and not in different regions for better availability. The crash recovery does not minimize
+                    data loss post disk failures.</li>
+                <li><strong>Option C is incorrect. </strong>The Survivable page cache feature provides performance gains
+                    but does not minimize data loss post disk failures. Aurora Replicas should be created in different
+                    Availability zones and not in different regions.</li>
+                <li><strong>Option D is incorrect</strong> as the crash recovery feature does not minimize data loss
+                    post disk failures.</li>
+            </ul>
+
+            <p>For more information on Amazon Aurora reliability features, refer to the following URL,</p>
+
+            <ul>
+                <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html"
+                        target="_blank">https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="explanation-block show-answer"><hr><h6>Explanation:</h6><div><p><strong>Correct Answer:&nbsp;D</strong></p>
+
+        <p>RTO (Recovery Time Objective) is a period for which downtime is observed post-disaster. It’s the time between the disaster and application recovery to serve full workloads. RPO (Recovery Point Objective) defines the amount of data loss during a disaster. It measures the time window when the last backup was performed, and the time when the disaster happened. Various Disaster recovery solutions can be deployed based on RTO/RPO and budget requirements for critical applications.</p>
+        
+        <p>The following are options available with Disaster recovery,</p>
+        
+        <ol>
+            <li>Backup and Restore: Least expensive among all the options but RTO/RPO will be very high in hours. All backup resources will be initiated only after a disaster at the primary location.</li>
+            <li>Pilot Light: Less expensive than warm standby and multi-site active/active. RTO/RPO happens in tens of minutes.</li>
+        </ol>
+        
+        <p>In this strategy, a minimum number of active resources are deployed at the backup locations. Resources required for data synchronization between primary and backup locations are only provisioned and are active. Other components such as application servers are switched off and are provisioned post a disaster at the primary location. In the above scenario, Pilot Light is the most suitable option to meet RTO/RPO requirements on a low budget.</p>
+        
+        <ol>
+            <li>Warm Standby: Expensive Than Pilot Light. RPO/RTO happens in minutes. The application is running at the backup location on scaled-down resource capacity. Once a disaster occurs at the primary location, all the resources are scaled up to meet the desired workload.</li>
+            <li>Multi-site active/active: Most expensive. No downtime or data loss is incurred as applications are active from multiple regions.</li>
+        </ol>
+        
+        <p>The following diagram shows the difference between each strategy with respect to&nbsp;&nbsp;&nbsp; RTO/RPO and cost.</p>
+        
+        <p><img alt="" src="https://s3.amazonaws.com/media.whizlabs.com/learn/mn3.png" style="height:338px; width:750px"></p>
+        
+      
+        
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html" target="_blank">https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html</a></li>
+        </ul></div></div>
 </body>
 
 </html>

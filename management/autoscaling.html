@@ -83,6 +83,13 @@
     <p>When a custom health check determines that an instance is unhealthy, the check manually triggers
         SetInstanceHealth and then sets the instance's state to Unhealthy. Amazon EC2 Auto Scaling then terminates the
         unhealthy instance.</p>
+    <p>
+        <li><strong>Auto Scaling Warm Pool.&nbsp;</strong> A is a collection of pre-initialized EC2
+            Instances sitting along with your Auto Scaling Group. So, when there’s a need to Scale Out, Auto Scaling
+            will pick one of the instances from the Warm Pool, and that instance will immediately start serving the
+            requests. This will eventually reduce the latency involved because of the time taken by a new instance to
+            launch.</li>
+    </p>
 </body>
 
 </html>

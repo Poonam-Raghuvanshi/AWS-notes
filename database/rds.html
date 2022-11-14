@@ -55,14 +55,59 @@
         standby DB instances to be upgraded at the same time. This causes downtime until the upgrade is complete</p>
     <p>
     <div>
-     
+
 
         <p>Amazon RDS supports TDE (Transparent Data Encryption) with Oracle and SQL servers. With TDE, data is
             automatically encrypted before it is written to storage and automatically decrypted when data is read from
             the storage. TDE in Oracle can be integrated with AWS CloudHSM which can securely store, generate, and
             manage cryptographic keys in a single-tenant Hardware security module.</p>
 
-       
+
+    </div>
+    <div>
+        <p><strong>Correct Answer:&nbsp;A</strong></p>
+
+        <p>DB snapshot can be shared with other authorized AWS accounts which can be up to 20 accounts. These snapshots
+            can be either in encrypted or unencrypted format.</p>
+
+        <p>For manual snapshots in an unencrypted format, accounts can directly restore a DB instance from the snapshot.
+        </p>
+
+        <p>For manual snapshots in an encrypted format, accounts first need to copy the snapshot and then restore it to
+            a DB instance.</p>
+
+        <p>While sharing a manual unencrypted snapshot, all accounts can use this snapshot to restore to the DB instance
+            when DB snapshot visibility is set to public.</p>
+
+        <p>While sharing a manual unencrypted snapshot, only specified accounts can restore a DB instance when DB
+            snapshot visibility is set to private.</p>
+
+        <p>In the case of manual encrypted snapshots, the only available option for DB snapshot visibility is private,
+            as encrypted snapshots cannot be made public.</p>
+
+        <ul>
+            <li><strong>Option B is incorrect </strong>as marking DB snapshot visibility as the public is not an ideal
+                option since snapshots need to share only with specific accounts. Marking DB snapshot visibility as
+                public will provide all Amazon accounts access to the manual snapshot and will be able to restore DB
+                instances using this snapshot.</li>
+            <li><strong>Option C is incorrect</strong> as DB instances can be directly restored from the snapshot for a
+                manual unencrypted snapshot. There is no need to create a copy of the snapshot to restore a DB instance.
+            </li>
+            <li><strong>Option D is incorrect </strong>as already discussed, marking DB snapshot visibility as the
+                public is not an ideal option. For a manual unencrypted snapshot, DB instances can be directly restored
+                from the snapshot.</li>
+        </ul>
+
+        <p>For more information on sharing Amazon RDS snapshots, refer to the following URLs,</p>
+
+        <ul>
+            <li><a href="https://aws.amazon.com/premiumsupport/knowledge-center/rds-snapshots-share-account/"
+                    target="_blank">https://aws.amazon.com/premiumsupport/knowledge-center/rds-snapshots-share-account/</a>
+            </li>
+            <li><a href="https://docs.amazonaws.cn/en_us/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html"
+                    target="_blank">https://docs.amazonaws.cn/en_us/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html</a>
+            </li>
+        </ul>
     </div>
     </p>
 </body>

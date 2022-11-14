@@ -311,6 +311,84 @@
         Lambda triggers are used to populate DynamoDB tables with object names and metadata when
         those objects are put into Amazon S3 then OpenSearch Service is used to search for specific assets,
         related metadata, and data classifications.</p>
+    <div>
+        <p><strong>Correct Answer:&nbsp;C</strong></p>
+
+        <p>A public virtual interface must be created for accessing Amazon S3 from an on-premises location over AWS
+            Direct Connect. On Public Virtual Interface, BGP community tags and NO_EXPORT BGP community tags are
+            supported. While advertising prefixes from on-premises to AWS, the following BGP communities can be used to
+            define the scope of prefix advertisements,</p>
+
+        <ol>
+            <li>7224:9100: Prefix advertised only to Local AWS region.</li>
+            <li>7224:9200: Prefix advertised to all AWS regions in a continent.</li>
+            <li>7224:9300: Prefix advertised globally to all AWS regions.</li>
+        </ol>
+
+        <p>When no BGP Tag is applied to the advertised prefixes, prefixes get advertised globally to all AWS regions.
+            NO_EXPORT BGP community tags can be used to prevent BGP neighbors from propagating advertised prefixes
+            further to their peers.</p>
+
+        <p>Local preference BGP communities are supported only on private virtual interfaces and transit virtual
+            interfaces.</p>
+
+        <p>In the above scenario, prefixes on on-premises should be advertised only to the AWS us-west-1 region. This
+            advertisement can be controlled by setting BGP community tag 7224:9100 on the advertised prefixes to
+            AWS.&nbsp;&nbsp;&nbsp;</p>
+
+        <ul>
+            <li><strong>Option A is incorrect</strong> as NO_EXPORT BGP community tags can be used to prevent BGP
+                neighbors from propagating advertised prefixes further to their peers.</li>
+            <li><strong>Option B is incorrect </strong>as AWS will advertise all these prefixes globally with no BGP
+                community tags set on advertised prefixes.</li>
+            <li><strong>Option D is incorrect </strong>as Local preference BGP community tags can be used to set route
+                preference on the incoming prefixes. This community tag is not supported on the public virtual
+                interface.</li>
+        </ul>
+
+        <p>For more information on BGP communities with Amazon Direct Connect, refer to the following URL,</p>
+
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/routing-and-bgp.html"
+                    target="_blank">https://docs.aws.amazon.com/directconnect/latest/UserGuide/routing-and-bgp.html</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <p><strong>Correct Answer:&nbsp;D</strong></p>
+
+        <p>Amazon Timestream is the most suitable serverless time series database for IoT and operational services. It
+            can store trillions of events from these sources. Storing this time series data in Amazon Timestream ensures
+            faster processing and is more cost-effective than storing such data in a regular relational database.</p>
+
+        <p>Amazon Timestream is integrated with data collection services in AWS such as Amazon Kinesis, and Amazon MSK,
+            and open-source tools such as Telegraf. Data stored in Amazon Timestream can be further visualized using
+            Amazon QuickSight. It can also be integrated with Amazon Sagemaker for machine learning.&nbsp;</p>
+
+        <ul>
+            <li><strong>Option A is incorrect </strong>as Amazon RDS (Relational Database Service) is best suited for
+                traditional applications such as CRM (customer relationship management) and ERP (Enterprise resource
+                planning). Using Amazon RDS for storing IoT sensor data will be costly and slow as compared to the
+                Amazon Timestream.</li>
+            <li><strong>Option B is incorrect </strong>as Amazon Neptune is suitable for creating graph databases
+                querying large amounts of data. Amazon Neptune is not a suitable option for storing IoT sensor data.
+            </li>
+            <li><strong>Option C is incorrect </strong>as Amazon DynamoDB is suitable for web applications supporting
+                key-value NoSQL databases. Using Amazon DynamoDB for storing IoT sensor data will be costly.</li>
+        </ul>
+
+        <p>For more information on Amazon Timestream, refer to the following URLs,</p>
+
+        <ul>
+            <li><a href="https://aws.amazon.com/products/databases/"
+                    target="_blank">https://aws.amazon.com/products/databases/</a></li>
+            <li><a href="https://aws.amazon.com/timestream/features/?nc=sn&amp;loc=2"
+                    target="_blank">https://aws.amazon.com/timestream/features/?nc=sn&amp;loc=2</a></li>
+        </ul>
+    </div>
+    <p>The following limits apply when using Amazon S3 Select:
+
+        The maximum length of a SQL expression is 256 KB.</p>
 </body>
 
 </html>

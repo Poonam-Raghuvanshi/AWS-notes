@@ -42,6 +42,46 @@
 
         Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify. You can
         use weighted routing to create records in a private hosted zone.</p>
+    <p>
+    <div>
+        <p><strong>Correct Answer: D</strong></p>
+
+        <p>Amazon Route 53 uses control planes to perform management-related activities such as creating, updating, and
+            deleting resources.</p>
+
+        <p>The Data plane is used for performing core services of Amazon Route 53 such as authoritative DNS service,
+            health checks, and responding to DNS queries in an Amazon VPC.</p>
+
+        <p>The Data plane is globally distributed, offering 100% availability SLA. Control plane traffic is optimized
+            for data consistency and may be impacted during disruptive events in the infrastructure.</p>
+
+        <p>While configuring failover between multiple sites, data plane functions such as health checks should be
+            preferred instead of control plane functions. In the above case, multiple endpoints in different regions can
+            be associated with Route 53. Route 53 can be configured to failover to a healthy endpoint based upon the
+            health checks which is a data plane function and always available.</p>
+
+        <ul>
+            <li><strong>Option A is incorrect </strong>as updating weights in a weighted routing policy is a control
+                plane function. For additional resiliency during a disaster, use data plane functions instead of control
+                plane functions.</li>
+            <li><strong>Options B and C are incorrect </strong>as creating, updating, and deleting private or public
+                hosted zone records are part of control plane actions. In case of a disaster, control planes might get
+                affected. Data plane functions such as health checks should be used for resources that are always
+                available.</li>
+        </ul>
+
+        <p>For more information on Amazon Route 53 control and data plane, refer to the following URLs,</p>
+
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-control-and-data-plane"
+                    target="_blank">https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-control-and-data-plane</a>
+            </li>
+            <li><a href="https://aws.amazon.com/blogs/networking-and-content-delivery/creating-disaster-recovery-mechanisms-using-amazon-route-53/"
+                    target="_blank">https://aws.amazon.com/blogs/networking-and-content-delivery/creating-disaster-recovery-mechanisms-using-amazon-route-53/</a>
+            </li>
+        </ul>
+    </div>
+    </p>
 </body>
 
 </html>
