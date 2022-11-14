@@ -25,9 +25,7 @@
 
     </p>
     <div>
-        <p><strong>Correct Answer: A</strong></p>
-
-        <p><strong>File system deployment options for FSx for Lustre:</strong></p>
+      
 
         <p>Amazon FSx for Lustre provides two file system deployment options: scratch and persistent.</p>
 
@@ -40,41 +38,6 @@
         <p><img alt="" src="https://s3.amazonaws.com/media.whizlabs.com/learn/ws6.1.png"
                 style="height:423px; width:750px"></p>
 
-        <ul>
-            <li><strong>Option A is CORRECT </strong>because FSx for Lustre with Deployment Type as Scratch File System
-                is designed for temporary storage and shorter-term data processing. Data isn't replicated and doesn't
-                persist if a file server fails. Scratch file systems provide high burst throughput of up to six times
-                the baseline throughput of 200 MBps per TiB storage capacity.</li>
-        </ul>
-
-        <p><img alt="" src="https://s3.amazonaws.com/media.whizlabs.com/learn/ws6.2.png"
-                style="height:542px; width:750px"></p>
-
-        <ul>
-            <li><strong>Option B is incorrect </strong>because FSx for Lustre with Deployment Type as Persistent file
-                systems are designed for longer-term storage and workloads. The file servers are highly available, and
-                data is automatically replicated within the same Availability Zone in which the file system is located.
-                The data volumes attached to the file servers are replicated independently from the file servers to
-                which they are attached.</li>
-        </ul>
-
-        <p><img alt="" src="https://s3.amazonaws.com/media.whizlabs.com/learn/ws6.3.png"
-                style="height:546px; width:750px"></p>
-
-        <ul>
-            <li><strong>Option C is incorrect </strong>because Amazon EFS is not as effective as Amazon FSx for Luster
-                when it comes to HPC design to deliver millions of IOPS (Input/Output Operations per Second) with
-                sub-millisecond latency.</li>
-            <li><strong>Option D is incorrect.</strong> The storage requirement here is for POSIX-compliant file systems
-                to support Linux-based workloads. Hence Amazon FSx for Windows File Server is not suitable here.</li>
-        </ul>
-
-        <p><strong>Reference: </strong></p>
-
-        <ul>
-            <li><a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html"
-                    target="_blank">https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html</a></li>
-        </ul>
     </div>
     <p class="heading"> FSx for Windows File Server</p>
     <p>
