@@ -389,6 +389,11 @@
     <p>The following limits apply when using Amazon S3 Select:
 
         The maximum length of a SQL expression is 256 KB.</p>
+    <p>If the IAM role that you create for the Lambda function is in the same AWS account as the bucket, then you don't
+        need to grant Amazon S3 permissions on both the IAM role and the bucket policy. Instead, you can grant the
+        permissions on the IAM role and then verify that the bucket policy doesn't explicitly deny access to the Lambda
+        function role. If the IAM role and the bucket are in different accounts, then you need to grant Amazon S3
+        permissions on both the IAM role and the bucket policy. </p>
 </body>
 
 </html>
