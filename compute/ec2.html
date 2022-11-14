@@ -9,14 +9,17 @@
 
 <body>
     <p class="main-heading">ELASTIC COMPUTE CLOUD</p>
+    <p>second billing continues - one-minute minimum charge</strong> .</p>
     <section>
         <p class="heading">Amazon Machine Image (AMI) </p>
         <p>
             Template that contains a software configuration (for example, an operating system, an application server,
             and applications). From an AMI, you launch an instance, which is a copy of the AMI running as a virtual
-            server in the cloud. You can launch multiple instances of an AMI, as shown in thefollowing figure.
+            server in the cloud.
 
         </p>
+        <p><b>When the new AMI is copied from region A into region B, it automatically creates a snapshot in region B
+                because AMIs are based on the underlying snapshots.</b></p>
     </section>
 
     <section>
@@ -28,8 +31,7 @@
             You can launch different types of instances from a single AMI. An instance type essentially determines the
             hardware of the host computer used for your instance. Each instance type offers different compute and memory
             capabilities.
-            You have complete control of your instances; you can use sudo to run commands that require
-            root privileges. <br> <b>Per second billing continues - one-minute minimum charge.</b>
+            <strong> Use sudo to run commands that require root privileges</strong>.
 
         </p>
         <p class="point">General Purpose</p>
@@ -74,13 +76,12 @@
 
     </section>
     <p class="heading">Instance store </p>
-    <p>You can't detach an instance store volume from one instance and attach it to a different instance - You can
-        specify instance store volumes for an instance only when you launch it. You can't detach an instance store
+    <p> You can specify instance store volumes for an instance only when you launch it. You can't detach an instance
+        store
         volume from one instance and attach it to a different instance. The data in an instance store persists only
-        during the lifetime of its associated instance. If an instance reboots (intentionally or unintentionally), data
-        in the instance store persists.
-        If you create an AMI from an instance, the data on its instance store volumes isn't preserved - If you create an
-        AMI from an instance, the data on its instance store volumes isn't preserved and isn't present on the instance
+        during the <b>lifetime of its associated instance</b>. If an instance reboots, data in the instance store
+        persists.If you create an AMI from an instance, the data on its instance store volumes isn't preserved and isn't
+        present on the instance
         store volumes of the instances that you launch from the AMI.
     </p>
     <p class="heading">Instance Reboot </p>
@@ -93,39 +94,43 @@
         address, it retains its IPv6 address.</p>
     <p>An Elastic IP address is associated with your AWS account. With an Elastic IP address, you can mask the failure
         of an instance or software by rapidly remapping the address to another instance in your account.</p>
+    <p>When you hibernate an instance, AWS signals the operating system to perform hibernation (suspend-to-disk).
+        Hibernation saves the contents from the instance memory (RAM) to your Amazon EBS root volume. AWS then persists
+        the instance's Amazon EBS root volume and any attached Amazon EBS data volumes.</p>
 
     <p class="heading">Placement Group </p>
     <p>
         When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of
-        your instances are spread out across underlying hardware to minimize correlated failures. You can use placement
-        groups to influence the placement of a group of interdependent instances to meet the needs of your workload.
-        Depending on the type of workload, you can create a placement group using one of the following placement
-        strategies:
+        your instances are spread out across underlying hardware to minimize correlated failures.
 
-    <p class="point"> Cluster placement group </p>
-    <p>packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the
-        low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of HPC
-        applications</p>
 
-    <p class="point"> Partition placement group</p>
     <p>
-        Spreads your instances across logical partitions such that groups of instances in one partition do not share the
-        underlying hardware with groups of instances in different partitions. This strategy is typically used by large
-        distributed and replicated workloads, such as Hadoop, Cassandra, and Kafka. <br /> A partition placement group
-        can have a maximum of seven partitions per Availability Zone.
+        <span class="point"> Cluster placement group - </span>packs instances close together inside an Availability
+        Zone. This
+        strategy enables workloads to achieve the
+        low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of HPC
+        applications
     </p>
 
-    <p class="point"> Spread placement group.</p>
 
-    Group of instances that are each placed on distinct racks, with each rack having
-    its own network and power source. <br />
+    <p> <span class="point"> Partition placement group - </span>
+        Spreads your instances across logical partitions such that groups of instances in one partition do not share the
+        underlying hardware with groups of instances in different partitions. This strategy is typically used by large
+        distributed and replicated workloads, such as Hadoop, Cassandra, and Kafka. <br /> <strong>Maximum of seven
+            partitions per AZ</strong>.
+    </p>
+    <p>
 
-    Spread placement groups are recommended for applications that have a small number of critical instances that
-    should be kept separate from each other. Launching instances in a spread placement group reduces the risk of
-    simultaneous failures that might occur when instances share the same racks.
+        <span class="point"> Spread placement group - </span>
+        Group of instances that are each placed on distinct racks, with each rack having
+        its own network and power source. <br />
 
-    A spread placement group can span multiple Availability Zones in the same Region. You can have a maximum of
-    seven running instances per Availability Zone per group.
+        Recommended for applications that have a small number of critical instances that
+        should be kept separate from each other. Launching instances in a spread placement group reduces the risk of
+        simultaneous failures that might occur when instances share the same racks.
+
+        A spread placement group can span multiple Availability Zones in the same Region. <br /> <strong>Maximum of
+            seven running instances per AZ</strong>.
     </p>
     <p><b> Rack spread placement group </b>can span multiple Availability Zones in the same Region. You can have a
         maximum of seven running instances per Availability Zone per group.</p>
@@ -158,15 +163,17 @@
 
     </p>
     <p> <span class="point"> Spot Instances</span> - Unused EC2 instance that is available for less than the On-Demand
-        price. Because Spot Instances enable you to request unused EC2 instances at steep discounts, you can lower your
-        Amazon EC2 costs significantly. <b>Spot Instances are a cost-effective choice if you can be flexible about when
-            your applications run and if your applications can be interrupted </b>. Spot Instances with a defined
-        duration (also known as Spot blocks) are designed not to be interrupted and will run continuously for the
-        duration you select. This makes them ideal for jobs that take a finite time to complete, such as batch
-        processing, encoding and rendering, modeling and analysis, and continuous integration.</p>
-    <p>Spot blocks allow you to request Amazon EC2 Spot instances for 1 to 6 hours at a time to avoid being interrupted
+        price (steep discounts). <b>Spot Instances are a cost-effective choice if you can be flexible about when
+            your applications run and if your applications can be interrupted </b>. </p>
+    <p><strong>Spot blocks - </strong> defined
+        duration and designed not to be interrupted and will run continuously for the
+        duration you select.Spot blocks allow you to request Amazon EC2 Spot instances for 1 to 6 hours at a time to
+        avoid being interrupted.This makes them ideal for jobs that
+        take a finite time to complete, such as batch
+        processing, encoding and rendering, modeling and analysis, and continuous integration.
     </p>
-    <p>A Spot Fleet is a set of Spot Instances and optionally On-Demand Instances that are launched to meet your target
+    <p><strong>Spot Fleet - </strong>- set of Spot Instances and optionally On-Demand Instances that are launched to
+        meet your target
         capacity</p>
     <p class="heading"> Launch template and launch configuration</p>
     <p>Similar but Launch template specifies instance <b> configuration information such as the ID of the Amazon Machine
@@ -187,9 +194,12 @@
     <p class="heading">Request throttling for the Amazon EC2 API - </p>
     <p> If you exceed an API throttling limit, you get the RequestLimitExceeded error code. You can use Amazon
         CloudWatch to monitor your Amazon EC2 API calls and to collect and track metrics around API throttling. </p>
-    <p><b>When the new AMI is copied from region A into region B, it automatically creates a snapshot in region B
-            because
-            AMIs are based on the underlying snapshots.</b></p>
+    <p> <span class="heading">Instance Metadata </span> consists of instance-id, AMI ID, public hostname, IPv4 address
+        which
+        is available from the running Amazon EC2 instances.
+        To get the AMI ID for the running instance,
+        http://169.254.169.254/latest/meta-data/ami-id can be used.</p>
+
     <p class="heading">EC2 Instance store </p>
     <p> <b>The data in an instance store persists only during the lifetime of its associated instance.</b>This storage
         is located on disks that are physically attached to the host computer. Instance store is ideal for
@@ -200,24 +210,9 @@
         As Instance Store based volumes provide high random I/O performance at low cost (as the storage is part of the
         instance's usage cost) and the resilient architecture can adjust for the loss of any instance,
     </p>
-    <p class="heading">Default termination policy </p>
-    <p>
-    <ul>
-        <li>
 
-            Determine whether any of the instances use the oldest launch template, unless there are instances that use a
-            launch configuration. Amazon EC2 Auto Scaling terminates instances that use a launch configuration before it
-            terminates instances that use a launch template.</li>
 
-        <li> After applying the preceding criteria, if there are multiple unprotected instances to terminate, determine
-            which instances are closest to the next billing hour. If there are multiple unprotected instances closest to
-            the next billing hour, terminate one of these instances at random. </li>
-    </ul>
-    </p>
-    <p class="heading">EC2 Instance Hibernate </p>
-    <p>When you hibernate an instance, AWS signals the operating system to perform hibernation (suspend-to-disk).
-        Hibernation saves the contents from the instance memory (RAM) to your Amazon EBS root volume. AWS then persists
-        the instance's Amazon EBS root volume and any attached Amazon EBS data volumes.</p>
+
     <p class="heading">Set up a bastion host on Amazon EC2 </p>
     <p> A bastion host is a server whose purpose is to provide access to a private
         network from an external network, such as the Internet. The bastion host runs on an Amazon EC2 instance that is
@@ -233,52 +228,82 @@
     <p>The Elastic Fabric Adapter (EFA) is a network interface for Amazon EC2 instances that enables customers to run
         HPC applications requiring high levels of inter-instance communications, like computational fluid dynamics,
         weather modeling, and reservoir simulation, at scale on AWS.</p>
-    <p>Instance Metadata consists of datas like instance-id, AMI ID, public hostname, IPv4 address, etc which
-        is available from the running Amazon EC2 instances.
-        URL http://169.254.169.254/latest/meta-data/ can be used to get these details from the running
-        instance. There are no charges for retrieving these details. There is no need to use the EC2 console or
-        CLI for getting these details. To get the AMI ID for the running instance,
-        http://169.254.169.254/latest/meta-data/ami-id can be used.</p>
+
     <p>ENA is a custom network interface optimized to deliver high throughput on specific supported EC2
         instances. This statement defines the correct steps to enable an ENA interface and validate the driver
         is in place.</p>
-    <p>Use different termination policies
-        To specify the termination criteria to apply before Amazon EC2 Auto Scaling chooses an instance for termination,
-        you can choose from any of the following predefined termination policies:
 
-        Default. Terminate instances according to the default termination policy. This policy is useful when you want
-        your Spot allocation strategy evaluated before any other policy, so that every time your Spot instances are
-        terminated or replaced, you continue to make use of Spot Instances in the optimal pools. It is also useful, for
-        example, when you want to move off launch configurations and start using launch templates.
+    <p class="heading">Termination policy </p>
+    <p>
+    <ul>
+        <li>Amazon EC2 Auto Scaling terminates instances that use a launch configuration before it
+            terminates instances that use a launch template.</li>
 
-        AllocationStrategy. Terminate instances in the Auto Scaling group to align the remaining instances to the
-        allocation strategy for the type of instance that is terminating (either a Spot Instance or an On-Demand
-        Instance). This policy is useful when your preferred instance types have changed. If the Spot allocation
-        strategy is lowest-price, you can gradually rebalance the distribution of Spot Instances across your N lowest
-        priced Spot pools. If the Spot allocation strategy is capacity-optimized, you can gradually rebalance the
-        distribution of Spot Instances across Spot pools where there is more available Spot capacity. You can also
-        gradually replace On-Demand Instances of a lower priority type with On-Demand Instances of a higher priority
-        type.
+        <li> After applying the preceding criteria, if there are multiple unprotected instances to terminate, determine
+            which instances are closest to the next billing hour. If there are multiple unprotected instances closest to
+            the next billing hour, terminate one of these instances at random. </li>
+    </ul>
+    <ul>
+        <li> Default. Terminate instances according to the default termination policy. This policy is useful when you
+            want
+            your Spot allocation strategy evaluated before any other policy, so that every time your Spot instances are
+            terminated or replaced, you continue to make use of Spot Instances in the optimal pools. It is also useful,
+            for
+            example, when you want to move off launch configurations and start using launch templates.</li>
 
-        OldestLaunchTemplate. Terminate instances that have the oldest launch template. With this policy, instances that
-        use the noncurrent launch template are terminated first, followed by instances that use the oldest version of
-        the current launch template. This policy is useful when you're updating a group and phasing out the instances
-        from a previous configuration.
+        <li>
 
-        OldestLaunchConfiguration. Terminate instances that have the oldest launch configuration. This policy is useful
-        when you're updating a group and phasing out the instances from a previous configuration. With this policy,
-        instances that use the noncurrent launch configuration are terminated first.
+            AllocationStrategy. Terminate instances in the Auto Scaling group to align the remaining instances to the
+            allocation strategy for the type of instance that is terminating (either a Spot Instance or an On-Demand
+            Instance). This policy is useful when your preferred instance types have changed. If the Spot allocation
+            strategy is lowest-price, you can gradually rebalance the distribution of Spot Instances across your N
+            lowest
+            priced Spot pools. If the Spot allocation strategy is capacity-optimized, you can gradually rebalance the
+            distribution of Spot Instances across Spot pools where there is more available Spot capacity. You can also
+            gradually replace On-Demand Instances of a lower priority type with On-Demand Instances of a higher priority
+            type.</li>
 
-        ClosestToNextInstanceHour. Terminate instances that are closest to the next billing hour. This policy helps you
-        maximize the use of your instances that have an hourly charge. (Only instances that use Amazon Linux, Windows,
-        or Ubuntu are billed in one-second increments.)
+        <li>
 
-        NewestInstance. Terminate the newest instance in the group. This policy is useful when you're testing a new
-        launch configuration but don't want to keep it in production.
+            OldestLaunchTemplate. Terminate instances that have the oldest launch template. With this policy, instances
+            that
+            use the noncurrent launch template are terminated first, followed by instances that use the oldest version
+            of
+            the current launch template. This policy is useful when you're updating a group and phasing out the
+            instances
+            from a previous configuration.</li>
 
-        OldestInstance. Terminate the oldest instance in the group. This option is useful when you're upgrading the
-        instances in the Auto Scaling group to a new EC2 instance type. You can gradually replace instances of the old
-        type with instances of the new type.</p>
+        <li>
+
+            OldestLaunchConfiguration. Terminate instances that have the oldest launch configuration. This policy is
+            useful
+            when you're updating a group and phasing out the instances from a previous configuration. With this policy,
+            instances that use the noncurrent launch configuration are terminated first.</li>
+
+        <li>
+
+            ClosestToNextInstanceHour. Terminate instances that are closest to the next billing hour. This policy helps
+            you
+            maximize the use of your instances that have an hourly charge. (Only instances that use Amazon Linux,
+            Windows,
+            or Ubuntu are billed in one-second increments.)</li>
+
+        <li>
+
+            NewestInstance. Terminate the newest instance in the group. This policy is useful when you're testing a new
+            launch configuration but don't want to keep it in production.</li>
+
+        <li>
+
+            OldestInstance. Terminate the oldest instance in the group. This option is useful when you're upgrading the
+            instances in the Auto Scaling group to a new EC2 instance type. You can gradually replace instances of the
+            old
+            type with instances of the new type.</li>
+    </ul>
+    <li>
+    <li>\ EC2 saving plan, you can save up to 72% (just like  Standard RIs). This plan applies to all of your EC2 instances using the same instance family.</li>
+    </li>
+    </p>
 
 </body>
 
