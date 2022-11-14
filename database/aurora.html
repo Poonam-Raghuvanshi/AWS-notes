@@ -127,7 +127,20 @@
         application. You typically do so by connecting to the reader endpoint of the cluster. That way, Aurora can
         spread the load for read-only connections across as many Aurora Replicas as you have in the cluster. Aurora
         Replicas also help to increase availability. If the writer instance in a cluster becomes unavailable, Aurora
-        automatically promotes one of the reader instances to take its place as the new writer. Aurora DB cluster can contain upto 15 Aurora replicas</p>
+        automatically promotes one of the reader instances to take its place as the new writer. Aurora DB cluster can
+        contain upto 15 Aurora replicas</p>
+    <p>For distributed applications, Global databases can be used. With this, Amazon Aurora spans a single database
+        across multiple regions. This enables fast reads from each region and helps quick cross-region disaster
+        recovery. With the Global database, failover to the secondary region can be completed with an RTO of one minute
+        from the degradation or complete failures in the primary region.</p>
+    <p>. Parallel Query is a feature supported currently by Amazon Aurora
+        for MySQL. It makes it possible to perform analytical queries over the data stored in your
+        transactional database without copying the data to a separate system for analytics.</p>
+    
+    <p> because Amazon Aurora Serverless is an on-demand, auto-scaling configuration for . It automatically starts up,
+        shuts down, and scales capacity up or down based on your application's needs. You can run your database on AWS
+        without managing database capacity.</p>
+        <p> </p>
 </body>
 
 </html>

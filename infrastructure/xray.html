@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Infrastructure </title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <p class="main-heading">CloudFormation </p>
+
+    <p>Custom resources can be used to write custom provisioning logic in an AWS CloudFormation
+        template. While using Custom resources, AWS CloudFormation sends a request to the service token
+        specified in the template and processes the stack operation once the response is received.
+        Custom resources are associated with either of the following,
+        1. Amazon SNS-backed custom resources: A SNS topic is associated with the custom
+        resources. Based upon SNS notifications, provisioning logic is invoked in the stack
+        t l t
+        A.
+        Use Custom resources and a Lambda function to create a function that will
+        update AMI IDs in the CloudFormation template
+        B.
+        Map AMI IDs to the specific instance type and regions. Manually update the AMI
+        IDs in the CloudFormation templates
+        C.
+        Use Custom resources along with Amazon SNS which will update AMI IDs in the
+        CloudFormation template
+        D.
+        Use Custom resources along with Amazon SQS which will update AMI IDs in the
+        CloudFormation template
+        11/13/22, 8:58 PM LMS | Whizlabs
+        https://www.whizlabs.com/learn/course/aws-solutions-architect-associate/153/quiz/60503/practice/start 2/3
+        templates.
+        2. AWS Lambda-backed custom resources: A Lambda function is associated with the
+        custom resources. A lambda function is invoked when a custom resource is updated,
+        deleted, or created.</p>
+    <p>
+    <div>
+        <p><strong>Correct Answer:&nbsp;A</strong></p>
+
+        <p>AWS Application Discovery Service collects data from existing servers at on-premises which can be used by the
+            customers to understand server configurations, usage, and behavior. It gathers various server parameters
+            such as CPU, disk, memory, and network. This collected data is encrypted in transit as well as at rest.
+            These parameters can be discovered in any of the following two ways.</p>
+
+        <ol>
+            <li>Agentless Discovery: This is suited for VMware hosts. With this method, an OVA (Open Virtual Appliance)
+                needs to be deployed on a VM host associated with VMware vCenter. No additional software is required to
+                discover the required parameters. This agent can collect the required information irrespective of the
+                operating systems installed on the VMs.</li>
+            <li>Agent-based Discovery: Agent-based discovery is suitable for collecting data for hosts other than VMware
+                hosts. With this, agents are deployed on machines having Windows, Linux, Ubuntu, CentOS, and SUSE
+                operating systems.</li>
+        </ol>
+
+        <ul>
+            <li><strong>Option B is incorrect </strong>as AWS Server Migration Service performs migration of the
+                application from on-premises to AWS Cloud. It’s not the service to identify server parameters such as
+                CPU, and memory of the on-premises servers. For migrating VMware hosts to the Amazon EC2 instance, AWS
+                Server Migration Service Connector can be used.</li>
+            <li><strong>Option C is incorrect</strong> as AWS Server Migration Service performs migration of the
+                application from on-premises to AWS Cloud. It’s not the service to identify server parameters such as
+                CPU, and memory of the on-premises servers.</li>
+            <li><strong>Option D is incorrect </strong>as Agent-based discovery with AWS Application Discovery Service
+                is best suited for VMs and physical servers having Windows and Linux operating systems. For VMs
+                associated with vCentre, Agentless discovery is the best option, not an agent-based discovery method.
+            </li>
+        </ul>
+
+        <p>For more information on AWS Application Discovery Service, refer to the following URL,</p>
+
+        <ul>
+            <li><a href="https://aws.amazon.com/application-discovery/faqs/"
+                    target="_blank">https://aws.amazon.com/application-discovery/faqs/</a></li>
+        </ul>
+    </div>
+</p>
+</p>
+</body>
+
+</html>

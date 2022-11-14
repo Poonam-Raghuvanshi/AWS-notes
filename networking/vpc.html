@@ -251,6 +251,14 @@
     <p>DNS hostnames and DNS resolution are required settings for private hosted zones. DNS queries for private hosted
         zones can be resolved by the Amazon-provided VPC DNS server only. As a result, these options must be enabled for
         your private hosted zone to work.f</p>
+    <p>An AWS Site-to-Site VPN has a maximum throughput of 1.25 Gbps. To scale throughput beyond 1.25
+        Gbps, equal-cost multi-path (ECMP) support can be used over multiple VPNs.
+        AWS Transit gateway supports ECMP, but Virtual Private Gateway does not support ECMP. When
+        multiple VPN links are established from on-premises to ECMP-enabled Transit Gateway, throughput
+        can scale over the limit of 1.25 Gbps per tunnel. Dynamic routing using BGP must be enabled on the
+        Transit Gateway for routing traffic over multiple VPN tunnels.
+    </p>
+    <p></p>
 </body>
 
 </html>

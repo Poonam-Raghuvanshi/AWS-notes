@@ -33,6 +33,17 @@
         web servers. When you use AWS WAF on Application Load Balancer, your rules run in the region and can be used to
         protect internet-facing as well as internal load balancers.
     </p>
+    <p>A rate-based rule tracks the rate of the request from the source IP address and takes action once the
+        limits are crossed. Following are customized rate-based rules which can be used for application
+        protection,
+        1. Blanket rate-based rule: Prevents source IP address from making excessive requests
+        to entire applications.
+        2. URI-specific rate-based rule: Prevents IP address from making excessive requests to
+        the URI (Uniform Request Identifier) of the application. These are useful if specific
+        functions of the applications, such as computationally expensive resources need to
+        be protected from excessive requests.
+        3. IP reputation rate-based rule: Prevents well-known malicious IP addresses from
+        making excessive requests to the application.</p>
 </body>
 
 
