@@ -59,6 +59,59 @@
             </ul>
         </div>
     </div>
+    <div>
+        <p><strong>Correct Answer: B</strong></p>
+
+        <p><strong>Create Alarms That Stop, Terminate, Reboot, or Recover an Instance&nbsp;</strong><br>
+            <br>
+            Using Amazon CloudWatch alarm actions, you can create alarms that automatically stop, terminate, reboot, or
+            recover your instances. You can use the stop or terminate actions to&nbsp;save money when you no longer need
+            an instance. You can use the reboot and recover actions to automatically reboot those instances or recover
+            them onto new hardware if a system impairment occurs.
+        </p>
+
+        <p>There are several scenarios in which you might want to stop or terminate your instance automatically. For
+            example, you might have instances dedicated to batch payroll processing jobs or scientific computing tasks
+            that run for a period of time and then complete their work. Rather than letting those instances sit idle
+            (and accrue charges), you can stop or terminate them, helping you to save money. The main difference between
+            using the stop and the terminate alarm actions is that you can easily restart a stopped instance if you need
+            to rerun it later, and you can keep the same instance ID and root volume. However, you cannot restart a
+            terminated instance. Instead, you must launch a new instance.</p>
+
+        <p><br>
+            You can add the stop, terminate, reboot, or recover actions to any alarm that is set on an Amazon EC2
+            per-instance metric, including basic and detailed monitoring metrics provided by Amazon CloudWatch (in the
+            AWS/EC2 namespace), as well as any custom metrics that include the InstanceId dimension, as long as its
+            value refers to a valid running Amazon EC2 instance.</p>
+
+        <p>For more information on Amazon EC2, please visit&nbsp;<a
+                href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html#AddingStopActions"
+                target="_blank">https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html#AddingStopActions</a>.
+        </p>
+
+        <p><strong>Breakdown</strong></p>
+
+        <ul>
+            <li>Option A is incorrect&nbsp;because CloudWatch Logs is not suitable to monitor the CloudWatch Metrics.
+            </li>
+            <li>Option B is correct.&nbsp;CloudWatch alarms are used to trigger notifications for any metric. Alarms can
+                trigger auto-scaling, EC2 actions(stop, terminate, recover, or reboot) and SNS notifications.</li>
+            <li>Option C is incorrect because SQS cannot modify the EC2 state when a CloudWatch metric breaches a
+                threshold value.</li>
+            <li>Option D is incorrect because AWS Lambda is not necessary in this scenario. CloudWatch Alarms can
+                directly monitor the metric and trigger actions when needed.</li>
+        </ul>
+
+        <p>Please refer to the below link for more information on Cloudwatch:</p>
+
+        <p><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatch-Events-Monitoring-CloudWatch-Metrics.html"
+                target="_blank">https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatch-Events-Monitoring-CloudWatch-Metrics.html</a>
+        </p>
+
+        <p><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/acw-ug.pdf" target="_blank"
+                data-lf-fd-inspected-kn9eq4r6mbl4rlvp="true">https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/acw-ug.pdf</a>
+        </p>
+    </div>
 </body>
 
 </html>

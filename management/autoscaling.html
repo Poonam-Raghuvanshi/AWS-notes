@@ -90,6 +90,11 @@
             requests. This will eventually reduce the latency involved because of the time taken by a new instance to
             launch.</li>
     </p>
+    <p>
+    <p><strong>Explanation</strong>: Adding Lifecycle Hooks to the Auto Scaling group puts the instance into a wait
+        state before termination. During this wait state, you can perform custom activities to retrieve critical
+        operational data from a stateful instance. The Default Wait period is 1 hour.</p>
+    </p>
 </body>
 
 </html>

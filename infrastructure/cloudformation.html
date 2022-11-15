@@ -9,7 +9,7 @@
 
 <body>
     <p class="main-heading">CloudFormation </p>
-    
+
     <p>Custom resources can be used to write custom provisioning logic in an AWS CloudFormation
         template. While using Custom resources, AWS CloudFormation sends a request to the service token
         specified in the template and processes the stack operation once the response is received.
@@ -35,28 +35,45 @@
         2. AWS Lambda-backed custom resources: A Lambda function is associated with the
         custom resources. A lambda function is invoked when a custom resource is updated,
         deleted, or created.</p>
-        <p><div><p><strong>Correct Answer: D</strong></p>
+    <p>
+    <div>
+        <p><strong>Correct Answer: D</strong></p>
 
-            <p>The cfn-init helper script is used to retrieve and interpret resource metadata from the AWS::CloudFormation::Init key. After reading the metadata, this script performs the following actions,</p>
-            
-            <ol>
-                <li>Fetch and parse metadata from CloudFormation.</li>
-                <li>Install packages.</li>
-                <li>Write files to disk.</li>
-                <li>Enable/disable and start/stop services.</li>
-            </ol>
-            
-            <ul>
-                <li><strong>Option A is incorrect </strong>as the cfn-hup helper script checks for any updates to the metadata. If there are any changes, it executes custom hooks.</li>
-                <li><strong>Option B is incorrect </strong>as the cfn-signal helper script can be used to signal CloudFormation to indicate if software or application is successfully updated on an Amazon EC2 instance.</li>
-                <li><strong>Option C is incorrect </strong>as the cfn-get-metadata helper script helps to retrieve metadata for a resource to a specific key. This will not install services or start services that the cfn-init helper script can perform.</li>
-            </ul>
-            
-            <p>For more information on AWS CloudFormation helper scripts, refer to the following URL,</p>
-            
-            <ul>
-                <li><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-helper-scripts-reference.html" target="_blank">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-helper-scripts-reference.html</a></li>
-            </ul></div></p>
+        <p>The cfn-init helper script is used to retrieve and interpret resource metadata from the
+            AWS::CloudFormation::Init key. After reading the metadata, this script performs the following actions,</p>
+
+        <ol>
+            <li>Fetch and parse metadata from CloudFormation.</li>
+            <li>Install packages.</li>
+            <li>Write files to disk.</li>
+            <li>Enable/disable and start/stop services.</li>
+        </ol>
+
+        <ul>
+            <li><strong>Option A is incorrect </strong>as the cfn-hup helper script checks for any updates to the
+                metadata. If there are any changes, it executes custom hooks.</li>
+            <li><strong>Option B is incorrect </strong>as the cfn-signal helper script can be used to signal
+                CloudFormation to indicate if software or application is successfully updated on an Amazon EC2 instance.
+            </li>
+            <li><strong>Option C is incorrect </strong>as the cfn-get-metadata helper script helps to retrieve metadata
+                for a resource to a specific key. This will not install services or start services that the cfn-init
+                helper script can perform.</li>
+        </ul>
+
+        <p>For more information on AWS CloudFormation helper scripts, refer to the following URL,</p>
+
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-helper-scripts-reference.html"
+                    target="_blank">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-helper-scripts-reference.html</a>
+            </li>
+        </ul>
+    </div>
+    </p>
+    <p>AWS CloudFormation Drift Detection can be used to detect changes made to AWS resources outside
+        the&nbsp;CloudFormation Templates. AWS CloudFormation Drift Detection only checks property values explicitly set
+        by stack templates or by specifying template parameters. It does not determine drift for property values that
+        are set by default. To determine drift for these resources, you can explicitly set property values that can be
+        the same as that of the default value.</p>
 </body>
 
 </html>

@@ -394,6 +394,88 @@
         permissions on the IAM role and then verify that the bucket policy doesn't explicitly deny access to the Lambda
         function role. If the IAM role and the bucket are in different accounts, then you need to grant Amazon S3
         permissions on both the IAM role and the bucket policy. </p>
+    <p>
+    <div>
+        <p><strong>Correct Answer - A</strong></p>
+
+        <p>Volume Gateways and Cached Volumes can be used to start storing data in S3.</p>
+
+        <p>AWS Documentation mentions the following:</p>
+
+        <p>You store your data in Amazon Simple Storage Service (Amazon S3) and retain a copy of frequently accessed
+            data subsets locally. Cached volumes offer substantial cost savings on primary storage and minimize the need
+            to scale your storage on-premises. You also retain low-latency access to your frequently accessed data.</p>
+
+        <p>This is the difference between Cached and stored volumes:</p>
+
+        <ul>
+            <li>
+                <p><strong>Cached volumes</strong>&nbsp;– You store your data in S3 and retain a copy of frequently
+                    accessed data subsets locally. Cached volumes offer substantial cost savings on primary storage
+                    and&nbsp;"minimize the need to scale your storage on-premises. You also retain low-latency access to
+                    your frequently accessed data."</p>
+            </li>
+            <li>
+                <p><strong>Stored volumes</strong>&nbsp;– If you need low-latency access to your entire data set, first
+                    configure your on-premises gateway to store all your data locally. Then asynchronously back up
+                    point-in-time snapshots of this data to Amazon S3. "This configuration provides durable and
+                    inexpensive off-site backups that you can recover to your local data center or Amazon EC2." For
+                    example, if you need replacement capacity for disaster recovery, you can recover the backups to
+                    Amazon EC2.</p>
+            </li>
+        </ul>
+
+        <p>As described in the answer: The company wants a quick win solution to store data with AWS, avoiding scaling
+            the on-premise setup rather than backing up the data.&nbsp;</p>
+
+        <p>In the question, they mentioned that&nbsp;<strong>"A company has a lot of data hosted on their On-premises
+                infrastructure."&nbsp;</strong>From On-premises to cloud infrastructure, you can use AWS storage
+            gateways.</p>
+
+        <p><strong>Options C and D are incorrect</strong> as they are&nbsp;talking about the S3 storage classes, but the
+            requirement is (How) to transfer or migrate your data from On-premises to Cloud infrastructure.&nbsp;</p>
+
+        <p><strong>References:</strong></p>
+
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html"
+                    target="_blank">https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html</a>
+            </li>
+        </ul>
+    </div>
+    </p>
+    <p>
+    <div class="explanation-block show-answer">
+        <hr>
+        <h6>Explanation:</h6>
+        <div>
+            <p><strong>Correct Answer – B</strong></p>
+
+            <p>AWS Documentation mentions the following on Lifecycle Policies.</p>
+
+            <p>Lifecycle configuration enables you to specify the lifecycle management of objects in a bucket. The
+                configuration is a set of one or more rules, where each rule defines an action for Amazon S3 to apply to
+                a group of objects. These actions can be classified as follows.</p>
+
+            <ul>
+                <li>Transition actions&nbsp;– In which you define when objects transition occurs to another&nbsp;storage
+                    class. For example, you may choose&nbsp;transition objects to the STANDARD_IA (IA, for infrequent
+                    access) storage class 30 days after creation or archive objects to the GLACIER storage class one
+                    year after creation.</li>
+                <li>Expiration actions&nbsp;– In which you specify when the objects expire. Then Amazon S3 deletes the
+                    expired objects on your behalf.</li>
+            </ul>
+
+            <p>&nbsp;For more information on AWS S3 Lifecycle policies, please visit the following URL-</p>
+
+            <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"
+                    target="_blank">https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html</a></p>
+        </div>
+    </div>
+    </p>
+    <p>
+    <p>Amazon S3 object lock should be enabled to store objects using the write once and read many (WORM) models.</p>
+    </p>
 </body>
 
 </html>

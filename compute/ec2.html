@@ -225,6 +225,10 @@
         applications requiring high levels of inter-node communications at scale on AWS. Its custom-built operating
         system (OS) bypass hardware interface enhances the performance of inter-instance communications, which is
         critical to scaling these applications. </p>
+    <p>
+    <p>An Elastic Fabric Adapter (EFA) is a network device that you can attach to your Amazon EC2 instance to accelerate
+        High-Performance Computing (HPC) and machine learning applications.</p>
+    </p>
     <p>The Elastic Fabric Adapter (EFA) is a network interface for Amazon EC2 instances that enables customers to run
         HPC applications requiring high levels of inter-instance communications, like computational fluid dynamics,
         weather modeling, and reservoir simulation, at scale on AWS.</p>
@@ -301,9 +305,67 @@
             type with instances of the new type.</li>
     </ul>
     <li>
-    <li>\ EC2 saving plan, you can save up to 72% (just like  Standard RIs). This plan applies to all of your EC2 instances using the same instance family.</li>
+    <li>\ EC2 saving plan, you can save up to 72% (just like Standard RIs). This plan applies to all of your EC2
+        instances using the same instance family.</li>
     </li>
     </p>
+    <p>
+        <li>Compute Savings plans automatically apply to EC2 instance usage
+            regardless of instance&nbsp;family, size, AZ, region, and OS. The web tier consists of multiple types of
+            instance family. EC2 Instance Savings Plans automatically reduce cost on the selected instance family in
+            that region regardless of AZ, size, OS, or tenancy.<br>
+            Since application tiers use the same set of instance families. The savings plan&nbsp;doesn't support the
+            RDS. So, Reserved instances are best suited for databases.</li>
+    </p>
+    <div class="explanation-block show-answer">
+        <hr>
+        <h6>Explanation:</h6>
+        <div>
+            <p><strong>Correct Answer: C</strong></p>
+
+            <p>Amazon ECS with EC2 launch type supports the following networking mode,</p>
+
+            <ol>
+                <li>Host Mode: This is a basic mode in which the networking of the container is directly tied to the
+                    underlying host.</li>
+                <li>Bridge Mode: In this mode, a network bridge is created between host and container networking. This
+                    bridge mode allows the remapping of ports between host and container ports.</li>
+                <li>None mode: In this mode, networking is not attached to the container. With this mode, containers do
+                    not have external connectivity.</li>
+                <li>AWSVPC Mode: In this mode, each task is allocated a separate ENI (Elastic Network Interface). Each
+                    Task will receive a separate IP address and a separate security group can be assigned to each ENI.
+                    This helps to have separate security policies for each task and helps to get granular monitoring for
+                    traffic flowing via each task.</li>
+            </ol>
+
+            <p>In the above scenario, using AWSVPC mode, the security team can assign different security policies for
+                each task as well as monitor traffic from each task distinctly.</p>
+
+            <ul>
+                <li><strong>Option A is incorrect</strong> as with host networking mode, networking of containers uses
+                    the network interface of the Amazon EC2 instance on which it's running. This is a basic network type
+                    and each task does not get assigned a different networking mode.</li>
+                <li><strong>Option B is incorrect </strong>as an elastic network interface (ENI) with the primary
+                    private IP address is assigned for Fargate task networking, not for ECS task networking.</li>
+                <li><strong>Option D is incorrect</strong> as Bridge mode uses Docker’s built-in virtual network.
+                    Containers connected to the bridge can communicate with others. Containers using different bridges
+                    cannot communicate with each other while providing isolation. It does not provide each task with a
+                    separate networking mode that can be used for security controls and network monitoring.</li>
+            </ul>
+
+            <p>For more information on Amazon ECS task networking and choosing a network mode, refer to the following
+                URLs,</p>
+
+            <ul>
+                <li><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html"
+                        target="_blank">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html</a>
+                </li>
+                <li><a href="https://docs.aws.amazon.com/AmazonECS/latest/bestpracticesguide/networking-networkmode.html"
+                        target="_blank">https://docs.aws.amazon.com/AmazonECS/latest/bestpracticesguide/networking-networkmode.html</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 </body>
 

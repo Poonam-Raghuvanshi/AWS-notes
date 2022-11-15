@@ -104,6 +104,12 @@
         Balancer operates at the connection level (Layer 4), routing connections to targets - Amazon EC2 instances,
         microservices, and containers – within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data.
     </p>
+    <p>
+        <li><strong> Application Load Balancer and Network Load Balancer
+            support dynamic port mapping. You can configure the ECS service to use the load balancer, and a dynamic port
+            will be selected for each ECS task automatically. With Dynamic port mapping, multiple copies of a task can
+            run on the same instance</strong>.</li>
+    </p>
 </body>
 
 </html>
