@@ -24,6 +24,11 @@
         your PostgreSQL DB instances. You can also force all connections to your PostgreSQL DB instance to use SSL.
 
     </p>
+    <p> These certificates are signed by a certificate authority. The SSL certificate includes the DB
+        instance endpoint as the Common Name (CN) for the SSL certificate to guard against spoofing attacks.
+
+        You can download a root certificate from AWS that works for all Regions or you can download Region-specific
+        intermediate certificates.</p>
     <p><b> You cannot SSH into an RDS DB instance.</b></p>
     <p class="heading">Read Replicas : Asynchronous Replication </p>
     <p>Improve your disaster recovery capabilities. <br>
@@ -64,63 +69,35 @@
 
 
     </div>
-    <div>
-        <p><strong>Correct Answer:&nbsp;A</strong></p>
+    <p class="heading">DB snapshot</p>
 
-        <p>DB snapshot can be shared with other authorized AWS accounts which can be up to 20 accounts. These snapshots
-            can be either in encrypted or unencrypted format.</p>
 
-        <p>For manual snapshots in an unencrypted format, accounts can directly restore a DB instance from the snapshot.
-        </p>
+    <p>DB snapshot can be shared with other authorized AWS accounts which can be up to 20 accounts. These snapshots
+        can be either in encrypted or unencrypted format.</p>
 
-        <p>For manual snapshots in an encrypted format, accounts first need to copy the snapshot and then restore it to
-            a DB instance.</p>
+    <p>For manual snapshots in an unencrypted format, accounts can directly restore a DB instance from the snapshot.
+        For manual snapshots in an encrypted format, accounts first need to copy the snapshot and then restore it to
+        a DB instance While sharing a manual unencrypted snapshot, all accounts can use this snapshot to restore to the
+        DB instance
+        when DB snapshot visibility is set to public.
 
-        <p>While sharing a manual unencrypted snapshot, all accounts can use this snapshot to restore to the DB instance
-            when DB snapshot visibility is set to public.</p>
+        While sharing a manual unencrypted snapshot, only specified accounts can restore a DB instance when DB
+        snapshot visibility is set to private.
 
-        <p>While sharing a manual unencrypted snapshot, only specified accounts can restore a DB instance when DB
-            snapshot visibility is set to private.</p>
+        In the case of manual encrypted snapshots, the only available option for DB snapshot visibility is private,
+        as encrypted snapshots cannot be made public.</p>
 
-        <p>In the case of manual encrypted snapshots, the only available option for DB snapshot visibility is private,
-            as encrypted snapshots cannot be made public.</p>
 
-        <ul>
-            <li><strong>Option B is incorrect </strong>as marking DB snapshot visibility as the public is not an ideal
-                option since snapshots need to share only with specific accounts. Marking DB snapshot visibility as
-                public will provide all Amazon accounts access to the manual snapshot and will be able to restore DB
-                instances using this snapshot.</li>
-            <li><strong>Option C is incorrect</strong> as DB instances can be directly restored from the snapshot for a
-                manual unencrypted snapshot. There is no need to create a copy of the snapshot to restore a DB instance.
-            </li>
-            <li><strong>Option D is incorrect </strong>as already discussed, marking DB snapshot visibility as the
-                public is not an ideal option. For a manual unencrypted snapshot, DB instances can be directly restored
-                from the snapshot.</li>
-        </ul>
 
-        <p>For more information on sharing Amazon RDS snapshots, refer to the following URLs,</p>
 
-        <ul>
-            <li><a href="https://aws.amazon.com/premiumsupport/knowledge-center/rds-snapshots-share-account/"
-                    target="_blank">https://aws.amazon.com/premiumsupport/knowledge-center/rds-snapshots-share-account/</a>
-            </li>
-            <li><a href="https://docs.amazonaws.cn/en_us/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html"
-                    target="_blank">https://docs.amazonaws.cn/en_us/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html</a>
-            </li>
-        </ul>
-    </div>
+
     <p>During automated backup, Amazon RDS creates a storage volume snapshot of the entire Database Instance. RDS
         uploads transaction logs for DB instances to Amazon S3 every 5 minutes. To restore a DB instance at a specific
         point in time, a new DB instance is created using the DB snapshot.</p>
     </p>
     <p>You manage your DB engine configuration through the use of parameters in a DB parameter group. DB parameter
         groups act as a container for engine configuration values that are applied to one or more DB instances.</p>
-    <p>Amazon RDS creates an SSL certificate and installs the certificate on the DB instance when Amazon RDS provisions
-        the instance. These certificates are signed by a certificate authority. The SSL certificate includes the DB
-        instance endpoint as the Common Name (CN) for the SSL certificate to guard against spoofing attacks.
-
-        You can download a root certificate from AWS that works for all Regions or you can download Region-specific
-        intermediate certificates.</p>
+   
     <p>You cannot create an encrypted Read Replica from an unencrypted master DB instance. You also cannot enable
         encryption after launch time for the master DB instance. Therefore, you must create a new master DB by taking a
         snapshot of the existing DB, encrypting it, and then creating the new DB from the snapshot. You can then create

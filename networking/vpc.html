@@ -78,62 +78,62 @@
         the destination is not reachable, Reachability Analyzer identifies the blocking component. </p>
     <p> For example, paths can be blocked by configuration
         issues in a security group, network ACL, route table, or load balancer.</p>
-    <p class="heading"> NAT instance </p>
-    <p>A NAT instance or a NAT Gateway can be used in a public subnet in your VPC to enable instances in the private
-        subnet to initiate outbound IPv4 traffic to the Internet.</p>
-    <p>NAT instance can be used as a bastion server
 
-        Security Groups can be associated with a NAT instance
-
-        NAT instance supports port forwarding</p>
-    <p class="heading"> NAT Gateway </p>
-    <p>
-    <p>We always need to keep NAT&nbsp;gateway on public Subnet only, because it needs to communicate the
-        Internet.&nbsp;<br>
-        <br>
-        AWS&nbsp;says that "To create a NAT gateway, you must specify the public subnet in which the NAT gateway should
-        reside. You must also specify an&nbsp;<a
-            href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-eips.html">Elastic IP address</a>&nbsp;to
-        associate with the NAT gateway when you create it.
-    </p>
     </p>
 
     <p class="heading"> AWS PrivateLink </p>
     <p>
 
-        AWS PrivateLink simplifies the security of data shared with cloud-based applications by eliminating the exposure
-        of data to the public Internet. AWS PrivateLink provides private connectivity between VPCs, AWS services, and
-        on-premises applications, securely on the Amazon network. AWS PrivateLink makes it easy to connect services
-        across different accounts and VPCs to significantly simplify the network architecture.</p>
+        Security of data shared with cloud-based applications. <b> No exposure public Internet</b>. AWS PrivateLink
+        provides private connectivity between VPCs, AWS services, and
+        on-premises applications, securely on the Amazon network. </p>
 
     <p class="heading"> Transit gateway </p>
     <p>A transit gateway is a network transit hub that you can use to interconnect your virtual private clouds (VPCs)
         and on-premises networks. As your cloud infrastructure expands globally, inter-Region peering connects transit
         gateways together using the AWS Global Infrastructure. <b>Your data is automatically encrypted and never travels
             over the public internet</b>.</p>
-    <p class="heading"> VPC Flow Logs </p>
-    <p>A flow log captures information about the IP traffic going to and from network interfaces in your VPC.</p>
+    <p><span class="heading"> VPC Flow Logs -</span>
+        A flow log captures information about the IP traffic going to and from network interfaces in your VPC.</p>
     <p class="heading"> Internet Gateway </p>
     <p>Horizontally scaled, redundant, and highly
         available VPC component that allows communication between instances in your <b>VPC and the internet</b> . It,
         therefore, imposes no availability risks or bandwidth constraints on your network traffic. </p>
     <p class="heading"> AWS Site-to-Site VPN </p>
     <p>
-        Enables you to securely connect your <b> on-premises network site to your Amazon VPC </b>. A VPC VPN Connection
-        utilizes IPSec to establish encrypted network connectivity between your intranet and Amazon VPC over the
-        Internet. VPN Connections can be configured in minutes and are a good solution if you have an immediate need,
+        Enables you to securely connect your <b> on-premises network site to your Amazon VPC </b>. <b>IPSec to establish
+            encrypted network connectivity</b> VPN Connections can be configured in minutes and are a good solution if
+        you have an immediate need,
         have low to modest bandwidth requirements, and can tolerate the inherent variability in Internet-based
         connectivity. </p>
+    <p>Maximum throughput of 1.25 Gbps. To scale throughput beyond 1.25
+        Gbps, equal-cost multi-path (ECMP) support can be used over multiple VPNs.
+        AWS Transit gateway supports ECMP, but Virtual Private Gateway does not support ECMP. When
+        multiple VPN links are established from on-premises to ECMP-enabled Transit Gateway, throughput
+        can scale over the limit of 1.25 Gbps per tunnel. Dynamic routing using BGP must be enabled on the
+        Transit Gateway for routing traffic over multiple VPN tunnels.
+    </p>
+
+    <p>For each VPN Tunnel, AWS provides two different VPN endpoints. ECMP (Equal Cost Multi-Path) can be used to carry
+        traffic on both VPN endpoints, increasing performance &amp; faster data transfer.</p>
     <p class="heading"> Network Address Translation (NAT) instance</p>
     <p>
         Network address translation (NAT) instance in a public subnet in your VPC to enable instances in
         the private subnet to initiate outbound IPv4 traffic to the Internet or other AWS services, but prevent the
         instances from receiving inbound traffic initiated by someone on the Internet. Amazon provides Amazon Linux AMIs
         that are configured to run as NAT instances. These AMIs include the string amzn-ami-vpc-nat in their names, so
-        you can search for them in the Amazon EC2 console. NAT instances are used to
-        provide internet access to any instances in a private subnet.</p>
-    <p class="heading"> Egress-only internet gateway</p>
-    <p>Horizontally scaled, redundant, and highly available VPC component that
+        you can search for them in the Amazon EC2 console.</p>
+
+    <p>NAT instance can be used as a bastion server, Security Groups can be associated and supports port forwarding</p>
+    <p class="heading"> NAT Gateway </p>
+    <p>
+    <p>We always need to keep NAT gateway on public Subnet only, because it needs to communicate the
+        InternetYou must also specify an Elastic IP address to associate with the NAT gateway when you create it.You can
+        route traffic from the NAT gateway to the internet gateway for
+        the VPC.
+    </p>
+    <p><span class="heading"> Egress-only internet gateway</span> Horizontally scaled, redundant, and highly available
+        VPC component that
         allows outbound communication over IPv6 from instances in your VPC to the internet, and prevents the internet
         from initiating an IPv6 connection with your instances.</p>
     <p class="heading"> VPC peering</p>
@@ -227,10 +227,7 @@
         design is suitable if you have multiple branch offices and existing internet connections and would like to
         implement a convenient, potentially low-cost hub-and-spoke model for primary or backup connectivity between
         these remote offices.
-
-        Per the given use-case, the corporate headquarters has an AWS Direct Connect connection to the VPC and the
-        branch offices have Site-to-Site VPN connections to the VPC. Therefore using the AWS VPN CloudHub, branch
-        offices can send and receive data with each other as well as with their corporate headquarters.</p>
+    </p>
 
     <p> <span class="point">Virtual private gateway</span>: A Virtual Private Gateway (also known as a VPN Gateway) is
         the endpoint on the AWS VPC side of your VPN connection.
@@ -246,39 +243,26 @@
         <span class="point">Customer Gateway device</span> : A physical device or software application on the customer
         side of the Site-to-Site VPN connection.
     </p>
+    <p class="heading"> Private hosted zone</p>
     <p>
-        A private hosted zone is a container for records for a domain that you host in one or more Amazon virtual
+        Container for records for a domain that you host in one or more Amazon virtual
         private clouds (VPCs). You create a hosted zone for a domain (such as example.com), and then you create records
         to tell Amazon Route 53 how you want traffic to be routed for that domain within and among your VPCs.
-        For each VPC that you want to associate with the Route 53 hosted zone, change the following VPC settings to
-        true:
-        enableDnsHostnames
-        enableDnsSupport
+        For each VPC that you want to associate with the Route 53 hosted zone, <b>change the following VPC settings to
+            true:enableDnsHostnames and enableDnsSupport</b>
     </p>
-    <p>You should create public NAT gateway in the public subnet of each AZ and must associate an elastic IP address
-        with the NAT gateway at creation. Then, you can route traffic from the NAT gateway to the internet gateway for
-        the VPC.</p>
+
     <p>DNS hostnames and DNS resolution are required settings for private hosted zones. DNS queries for private hosted
         zones can be resolved by the Amazon-provided VPC DNS server only. As a result, these options must be enabled for
         your private hosted zone to work.f</p>
-    <p>An AWS Site-to-Site VPN has a maximum throughput of 1.25 Gbps. To scale throughput beyond 1.25
-        Gbps, equal-cost multi-path (ECMP) support can be used over multiple VPNs.
-        AWS Transit gateway supports ECMP, but Virtual Private Gateway does not support ECMP. When
-        multiple VPN links are established from on-premises to ECMP-enabled Transit Gateway, throughput
-        can scale over the limit of 1.25 Gbps per tunnel. Dynamic routing using BGP must be enabled on the
-        Transit Gateway for routing traffic over multiple VPN tunnels.
-    </p>
-    <p>
-    <p>For each VPN Tunnel, AWS provides two different VPN endpoints. ECMP (Equal Cost Multi-Path) can be used to carry
-        traffic on both VPN endpoints, increasing performance &amp; faster data transfer.</p>
-    </p>
-    <p>
+
+
+
     <div>
-        <p><strong>Correct Answer:&nbsp;A</strong></p>
 
-        <p>AWS reserves 5 IP addresses.</p>
 
-        <p>The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to
+        <p>AWS reserves 5 IP addresses. The first four IP addresses and the last IP address in each subnet CIDR block
+            are not available for you to
             use, and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the
             following five IP addresses are reserved:</p>
 
@@ -324,26 +308,7 @@
         <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Therefore 32-30 = 2 and 2 ^ 2 (i.e 2 * 2) - 5 =
             -1 &nbsp;</p>
 
-        <p><strong>For option ‘A’,</strong> we get ‘27’ IP addresses (or indirectly the number of instances to be
-            provisioned) as shown above.</p>
 
-        <p>Since the user has to provision ‘20’ EC2 instances, we need&nbsp;to go with option ‘<strong>A</strong>’,
-            which is the only correct IPv4 CIDR block.</p>
-
-        <p><strong>Option B&nbsp;is incorrect </strong>because we get only ‘11’ IP addresses (or indirectly the number
-            of instances to be provisioned ).</p>
-
-        <p><strong>Option C&nbsp;is incorrect </strong>because we get only ‘3’ IP addresses.</p>
-
-        <p><strong>Option D&nbsp;is incorrect </strong>because we get only ‘-1’ IP address.</p>
-
-        <p>For more information, please refer to the below URL-</p>
-
-        <ul>
-            <li><a
-                    href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4">https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4</a>
-            </li>
-        </ul>
     </div>
     </p>
 </body>
