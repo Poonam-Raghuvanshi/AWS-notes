@@ -268,7 +268,84 @@
         can scale over the limit of 1.25 Gbps per tunnel. Dynamic routing using BGP must be enabled on the
         Transit Gateway for routing traffic over multiple VPN tunnels.
     </p>
-    <p></p>
+    <p>
+    <p>For each VPN Tunnel, AWS provides two different VPN endpoints. ECMP (Equal Cost Multi-Path) can be used to carry
+        traffic on both VPN endpoints, increasing performance &amp; faster data transfer.</p>
+    </p>
+    <p>
+    <div>
+        <p><strong>Correct Answer:&nbsp;A</strong></p>
+
+        <p>AWS reserves 5 IP addresses.</p>
+
+        <p>The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to
+            use, and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the
+            following five IP addresses are reserved:</p>
+
+        <p><em>10.0.0.0: Network address.</em></p>
+
+        <p><em>10.0.0.1: Reserved by AWS for the VPC router.</em></p>
+
+        <p><em>10.0.0.2: Reserved by AWS. </em>The IP address of the DNS server is the base of the VPC network range
+            plus two. For VPCs with multiple CIDR blocks, the IP address of the DNS server is located in the primary
+            CIDR. We also reserve the base of each subnet range plus two for all CIDR blocks in the VPC. For more
+            information, see the Amazon DNS server.</p>
+
+        <p><em>10.0.0.3: Reserved by AWS for future use.</em></p>
+
+        <p><em>10.0.0.255: Network broadcast address. </em>We do not support broadcast in a VPC, therefore we reserve
+            this address.</p>
+
+        <p>The formula to calculate the number of assignable IP addresses to CIDR networks is similar to classful
+            networking. Subtract the number of network bits from 32. For example, a /24 network has 2^(32-24) - 2
+            addresses available for host assignment.</p>
+
+        <p><strong>A</strong>.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prefix Length is
+            ‘27’</p>
+
+        <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Therefore 32-27 = 5 and 2 ^ 5 (i.e 2 * 2 * 2 *
+            2 * 2) – 5 = 27</p>
+
+        <p><strong>B</strong>.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prefix Length is
+            ‘28’</p>
+
+        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Therefore 32-28 = 4 and 2 ^ 4 (i.e 2 * 2 * 2 *
+            2) - 5= 11</p>
+
+        <p><strong>C</strong>.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prefix Length is
+            ‘29’</p>
+
+        <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Therefore 32-29 = 3 and 2 ^ 3 (i.e 2 * 2 * 2) -
+            5&nbsp;= 3</p>
+
+        <p><strong>D</strong>.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prefix Length is
+            ‘30’</p>
+
+        <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Therefore 32-30 = 2 and 2 ^ 2 (i.e 2 * 2) - 5 =
+            -1 &nbsp;</p>
+
+        <p><strong>For option ‘A’,</strong> we get ‘27’ IP addresses (or indirectly the number of instances to be
+            provisioned) as shown above.</p>
+
+        <p>Since the user has to provision ‘20’ EC2 instances, we need&nbsp;to go with option ‘<strong>A</strong>’,
+            which is the only correct IPv4 CIDR block.</p>
+
+        <p><strong>Option B&nbsp;is incorrect </strong>because we get only ‘11’ IP addresses (or indirectly the number
+            of instances to be provisioned ).</p>
+
+        <p><strong>Option C&nbsp;is incorrect </strong>because we get only ‘3’ IP addresses.</p>
+
+        <p><strong>Option D&nbsp;is incorrect </strong>because we get only ‘-1’ IP address.</p>
+
+        <p>For more information, please refer to the below URL-</p>
+
+        <ul>
+            <li><a
+                    href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4">https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4</a>
+            </li>
+        </ul>
+    </div>
+    </p>
 </body>
 
 </html>

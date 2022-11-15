@@ -103,12 +103,22 @@
         latency and high throughput workloads that involve scaling to millions of requests per second. Network Load
         Balancer operates at the connection level (Layer 4), routing connections to targets - Amazon EC2 instances,
         microservices, and containers – within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data.
+        Network Load Balancer requires one certificate per TLS connection to encrypt traffic between client &amp; NLB
+        and&nbsp;forward decrypted traffic to target servers. Using&nbsp; AWS Certificate Manager is a preferred option,
+        as these certificates are automatically renewed on expiry.
     </p>
     <p>
         <li><strong> Application Load Balancer and Network Load Balancer
-            support dynamic port mapping. You can configure the ECS service to use the load balancer, and a dynamic port
-            will be selected for each ECS task automatically. With Dynamic port mapping, multiple copies of a task can
-            run on the same instance</strong>.</li>
+                support dynamic port mapping. You can configure the ECS service to use the load balancer, and a dynamic
+                port
+                will be selected for each ECS task automatically. With Dynamic port mapping, multiple copies of a task
+                can
+                run on the same instance</strong>.</li>
+    </p>
+    <p>
+    <p>ALB supports Server Name Indication (SNI), enabling hosting multiple domain names with different TLS certificates
+        behind a single ALB. With SNI, multiple certificates can be associated with listeners in ALB, enabling each web
+        application to use separate certificates. </p>
     </p>
 </body>
 
