@@ -82,6 +82,9 @@
                     target="_blank">https://aws.amazon.com/blogs/containers/introducing-amazon-ecs-anywhere/</a></li>
         </ul>
     </div>
+    <p>To specify permissions for a specific task on Amazon ECS you should use IAM Roles for Tasks. The permissions
+        policy can be applied to tasks when creating the task definition, or by using an IAM task role override using
+        the AWS CLI or SDKs. The taskRoleArn parameter is used to specify the policy.</p>
 </body>
 
 </html>

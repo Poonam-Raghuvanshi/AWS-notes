@@ -372,7 +372,11 @@
         <li>No internet access for compute resources</li>
         <li>Amazon EC2 instance limit reached</li>
     </ul>
-    To get the private and public IP addresses, you can run the following commands on the running instance. http://169.254.169.254/latest/meta-data/local-ipv4
+    To get the private and public IP addresses, you can run the following commands on the running instance.
+    http://169.254.169.254/latest/meta-data/local-ipv4
+    <p>Amazon EC2 Nitro-based systems are not required for this solution but do offer advantages in performance that
+        will help to maximize the usage of the EBS volume. For the data storage volume an i01 volume can support up to
+        64,000 IOPS so a single volume with sufficient capacity (50 IOPS per GiB) can be deliver the requirements.</p>
 
 </body>
 

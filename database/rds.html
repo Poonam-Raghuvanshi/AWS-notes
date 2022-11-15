@@ -115,6 +115,16 @@
     </p>
     <p>You manage your DB engine configuration through the use of parameters in a DB parameter group. DB parameter
         groups act as a container for engine configuration values that are applied to one or more DB instances.</p>
+    <p>Amazon RDS creates an SSL certificate and installs the certificate on the DB instance when Amazon RDS provisions
+        the instance. These certificates are signed by a certificate authority. The SSL certificate includes the DB
+        instance endpoint as the Common Name (CN) for the SSL certificate to guard against spoofing attacks.
+
+        You can download a root certificate from AWS that works for all Regions or you can download Region-specific
+        intermediate certificates.</p>
+    <p>You cannot create an encrypted Read Replica from an unencrypted master DB instance. You also cannot enable
+        encryption after launch time for the master DB instance. Therefore, you must create a new master DB by taking a
+        snapshot of the existing DB, encrypting it, and then creating the new DB from the snapshot. You can then create
+        the encrypted cross-region Read Replica of the master DB.</p>
 </body>
 
 </html>

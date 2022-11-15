@@ -40,6 +40,9 @@
         account.</p>
     <p>If a user or role has an IAM permission policy that grants access to an action that is either not allowed or
         explicitly denied by the applicable SCPs, the user or role can't perform that action.</p>
+    <p>To apply the restrictions across multiple member accounts you must use a Service Control Policy (SCP) in the AWS
+        Organization. The way you would do this is to create a deny rule that applies to anything that does not equal
+        the specific instance type you want to allow.</p>
 </body>
 
 </html>

@@ -91,6 +91,13 @@
             wants&nbsp;to serve private content through CloudFront, they can choose&nbsp;signed URLs or signed cookies.
         </li>
     </p>
+    <p>A custom origin can point to an on-premises server and CloudFront is able to cache content for dynamic websites.
+        CloudFront can provide performance optimizations for custom origins even if they are running on on-premises
+        servers. These include persistent TCP connections to the origin, SSL enhancements such as Session tickets and
+        OCSP stapling.
+
+        Additionally, connections are routed from the nearest Edge Location to the user across the AWS global network.
+        If the on-premises server is connected via a Direct Connect (DX) link this can further improve performance.</p>
 </body>
 
 </html>
